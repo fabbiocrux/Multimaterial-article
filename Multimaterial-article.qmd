@@ -131,4 +131,17 @@ This study explores the potential of direct 3-D printing two immiscible polymers
 The experimental process of collection, characterization, and printing of the recycled material is described and the results are discussed in the context of widespread DRAM adoption at the community level.
 
 
+# Materials and Methods
+
+## Raw material obtention
+
+## Characterization of the raw material 
+
+## FTIR Infrared 
+
+
+
+
+
+
 # References {-}

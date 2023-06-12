@@ -1,0 +1,351 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  12pt,
+  number]{article}
+
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[top=30mm,left=20mm,heightrounded]{geometry}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{5}
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\makeatletter
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[many]{tcolorbox}}
+\makeatother
+\makeatletter
+\@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
+\makeatother
+\makeatletter
+\makeatother
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage[]{natbib}
+\bibliographystyle{elsarticle-num}
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Multi-material distributed recycling via Fused granular fabrication: rHDPE and rPET case of study},
+  pdfauthor={Catalina Suescun; Bob Security; Cat Memes; Derek Zoolander},
+  pdfkeywords={keyword1, keyword2},
+  colorlinks=true,
+  linkcolor={Blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\setlength{\parindent}{6pt}
+\begin{document}
+
+\begin{frontmatter}
+\title{Multi-material distributed recycling via Fused granular
+fabrication: rHDPE and rPET case of study}
+\author[1]{Catalina Suescun%
+\corref{cor1}%
+\fnref{fn1}}
+ \ead{alice@example.com} 
+\author[2]{Bob Security%
+%
+\fnref{fn2}}
+ \ead{bob@example.com} 
+\author[2]{Cat Memes%
+%
+\fnref{fn3}}
+ \ead{cat@example.com} 
+\author[]{Derek Zoolander%
+%
+}
+ \ead{derek@example.com} 
+
+\affiliation[1]{organization={Université de Lorraine, Department
+Name},addressline={Street Address},city={City},postcode={Postal
+Code},postcodesep={}}
+\affiliation[2]{organization={Another University, Department
+Name},addressline={Street Address},city={City},postcode={Postal
+Code},postcodesep={}}
+
+\cortext[cor1]{Corresponding author}
+\fntext[fn1]{This is the first author footnote.}
+\fntext[fn2]{Another author footnote, this is a very long footnote and
+it should be a really long footnote. But this footnote is not yet
+sufficiently long enough to make two lines of footnote text.}
+\fntext[fn3]{Yet another author footnote.}
+
+        
+\begin{abstract}
+The high volume of plastic waste and the extremely low recycling rate
+has created a serious challenge worldwide. Local distributed recycling
+coupled to additive manufacturing (DRAM) offers a solution by
+economically incentivizing local recycling. A new DRAM technology
+capable of processing large quantities of plastic waste quickly is fused
+granular fabrication (FGF), where solid shredded plastic waste can be
+reused directly as 3D printing feedstock. This study presents an
+experimental assessment of multi-material recycling printability, using
+two of the most common thermoplastics in the beverage industry
+polyethylene terephthalate (PET) and high-density polyethylene (HDPE)
+and the feasibility of mixing PET and HDPE to be used as a feedstock
+material for large-scale 3-D printing. After the material collection,
+shredding, and cleaning its characterization, and optimization of
+parameters for 3D printing was performed. Results showed the feasibility
+of printing a large object from rPET/rHDPE flakes reducing the
+production cost up to 88\%. .
+\end{abstract}
+
+
+
+
+
+\begin{keyword}
+    keyword1 \sep 
+    keyword2
+\end{keyword}
+\end{frontmatter}
+    \ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[enhanced, borderline west={3pt}{0pt}{shadecolor}, boxrule=0pt, frame hidden, interior hidden, breakable, sharp corners]}{\end{tcolorbox}}\fi
+
+\hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
+
+The disposal of plastic waste is one of the most challenging current
+environmental concerns given its systemic complexity \citep{evode2021}.
+The mass of micro- / meso- plastics in the oceans are expected to exceed
+the mass of the global stock of fish by 2050 \citep{macarthur2017}. More
+critically, the global plastic annual production is expected to reach
+1100 metric tons by the same year \citep{geyer2020}. The societal
+awareness on plastic recycling have received substantial attention by
+scientific, policymaker and general public \citep{soares2021}.
+Unfortunately, the statistical analysis on the centralized recycling
+process proves that it has been largely ineffective
+\citep{godswillImpactsPlasticPollution2019a} as only 9\% of the plastic
+that has been produced has been recycled from the total stock produced
+since 1950 \citep{Geyer2017}. Therefore, it remains an open challenge to
+identify alternatives to valorize discarded plastic material.
+
+Distributed recycling and additive manufacturing (DRAM), is an
+innovative technical approach to recycle plastic wastes
+\citep{cruzsanchez2020, dertinger2020}. DRAM was first practiced with
+recyclebots, which are waste plastic extruders that made filament for
+conventional fused filament-based 3-D printers
+\citep{baechler2013, zhong2018, woern2018}. Past research demonstrated
+that using distributed recycling fits into the circular economy paradigm
+\citep{Ford2016, Despeisse2016}; where consumers directly recycle their
+own waste into consumer products from open source designs, from toys for
+children \citep{Petersen2017} to adaptive aids for those with arthritis
+\citep{gallup2018}. Distributed manufacturing is now in wide use
+\citep{pearce2022}. In this way DRAM-based recycling is done in a closed
+loop supply chain network \citep{santander2020}. This type of recycling
+aims to reduce the environmental impact by the reduction of the
+transportation from the waste source to recycling facilities
+\citep{kreiger2014}. In that sense, it aims to propose innovative
+closed-loop strategies using waste materials as raw resources
+\citep{romani2021}.
+
+Fused filament fabrication (FFF, which is also known as Fused Deposition
+Modelling --FDM©-) is the most-widespread and established
+extrusion-based AM technology due to the open source proliferation from
+the self-replicating rapid prototyper (RepRap) project
+\citep{jones2011, sells2009, bowyer2014}. This is due to its simplicity,
+versatility, low-cost, and ability in the construction of geometrically
+complex objects in the industrial and prosumer domains
+\citep{romani2022}. Indeed, the open-source 3-D approach for 3-D
+printers has enabled the technology to evolve in a radical manner for
+manufacturing and prototyping adding value to the recycled material
+\citep{cruzsanchez2020}. There are large efforts to find sustainable
+feedstocks for 3-D printing \citep[\citep{Pakkanen2017}]{rett2021}.
+Several studies in the literature have increase the spectrum of recycled
+filament materials such as PLA \citep{cruzsanchez2017, anderson2017},
+ABS \citep{mohammed2017a, mohammed2017}, PET
+\citep{zander2018, vaucher2022}, HDPE
+\citep{chong2017, mohammed2017a, baechler2013} PC \citep{gaikwad2018}.
+In fact, using a comparative life cycle assessment in a low density
+population case study of Michigan, USA, \citep{Kreiger2014} argued that
+about of 100 billion MJ of energy per year could be saved in a
+distributed approach, for the 984 million pounds of HDPE that are
+recycled in the U.S. There is thus considerable evidence that DRAM can
+reduce the energy consumption and greenhouse gases of the manufacturing
+processes.
+
+Most DRAM studies have been using mono-material for the fabrication of
+feedstock for FFF. There are, however, several examples of mixed
+materials including wood waste and recycled plastic
+\citep{pringle2018, loschke2019} and textile fibers and recycled plastic
+\citep{carrete2021}. Recently, \citep{zander2019b} reported the
+manufacturing of composite filament from recycled PET/PP and PS/PP
+blending through compatibilizer copolymer such as SEBS. Their results
+revealed the technical printability of polypropylene blend composite
+filaments from a thermo-mechanical characterization perspective.
+Increasing the performance window of blending materials by
+compatibilization which could be a relevant path for recycling plastics
+in a local level and isolated areas contexts (e.g.~during humanitarian
+crises \citep[\citep{corsini2022},\citep{lipsky2019}]{savonen2018},
+supply chain disruptions \citep[\citep{choong202}, \citep{salmi2020},
+\citep{attaran2020}]{novak2020} and/or isolated off-grid situations
+using solar-powered 3-D printers \citep[\citep{gwamuri2016},
+\citep{wong2015}, \citep{mohammed2018}]{king2014}). Likewise,
+\citep{vaucher2022} studied the evaluation of the microstructure,
+mechanical performance, and printing quality of filaments made from rPET
+and rHDPE varying the wt\% of HDPE material from 0 to 10\%. They
+confirmed the increase in the Young's modulus from 1.7 GPa of the pure
+PET to 2.1 GPa for all the HDPE concentrations. Additionally, the
+maximum stress of the bends were augmented with high HDPE
+concentrations. Values were lower than virgin PET filament, yet similar
+to commercial recycle ones. The addition of rHDPE at higher levels,
+however, helped to meet the brittle-ductile transition in 15\% despite
+the low interfacial tension of both polymers, allowing the printing of
+quality parts.
+
+While former studies have proven been successful in FFF, a new approach
+to DRAM is fused granular fabrication (FGF) or fused particle
+fabrication (FPF), where the material-extrusion AM systems print
+directly from pellets, granules, flakes, shred or grinder material
+\citep{fontana2022, woern2018}. In the context of recycling, this could
+reduce the number of melt/extrusion cycles that degrade the material
+needed in the filament fabrication process \citep{cruzsanchez2017a}. The
+FGF technique opens up the potential of use recycle materials as well as
+print large-scale objects either with a conventional cartesian 3-D
+printer \citep{woern2018}, delta 3-D printer \citep{grassi2019} or
+hangprinter \citep[\citep{rattan2023}]{petsiuk2022}. Research groups
+corroborate that plastic waste can be used as feedstock materials for
+FGF/FPF. \citep{alexandre2020} assessed the technical and economical
+dimensions of virgin and shredded PLA printed in a self-modified FGF
+machine and compared with FFF. The investigation showed that the use of
+FGF reduced printing cost, time and its mechanical performance was
+comparable with the obtained using the traditional FFF technique.
+Likewise, \citep{woern2018} found comparable properties between PLA,
+ABS, PP, and PET recycled and virgin materials. Later publications
+demonstrated the technical and economic feasibility through the printing
+of complex objects validating the possibility of recycle plastic with
+FGF in both conventional and common FFF materials \citep{byard2019}, but
+also recycle PC \citep{reich2019b} and rPET \citep{little2020}. Few
+researchers, however, have addressed the problem of the direct printing
+of recycled multi-materials, which might be a key step forward needed to
+facilitate the ease of sorting and recycling post-consumer plastic waste
+materials.
+
+This study explores the potential of direct 3-D printing two immiscible
+polymers commonly used in the beverage sector through a distributed
+recycling process for its easily implementation operation at the local
+level. To demonstrate the feasibility of the process, the bottled water
+plastic most used in France of roughly 90\% of PET (body of the bottle)
+and 10\% of HDPE (cap) now called \emph{rPET90//rHDPE10}, is used as a
+test material. The experimental process of collection, characterization,
+and printing of the recycled material is described and the results are
+discussed in the context of widespread DRAM adoption at the community
+level.
+
+
+\renewcommand\refname{References}
+  \bibliography{assets/Catalina.bib,assets/References.bib}
+
+
+\end{document}
