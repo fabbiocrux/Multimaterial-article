@@ -1,0 +1,134 @@
+---
+title: "Multi-material distributed recycling via Fused granular fabrication: rHDPE and rPET case of study"
+#subtitle: A Short Subtitle
+author:
+  - name: Catalina Suescun
+    email: alice@example.com
+    affiliations: 
+        - id: some-tech
+          name: Université de Lorraine
+          department: Department Name
+          address: Street Address
+          city: City
+          state: State
+          postal-code: Postal Code
+    attributes:
+        corresponding: true
+    note: This is the first author footnote.
+  - name: Bob Security
+    email: bob@example.com
+    affiliations:
+        - id: another-u
+          name: Another University
+          department: Department Name
+          address: Street Address
+          city: City
+          state: State
+          postal-code: Postal Code
+    note: |
+      Another author footnote, this is a very long footnote and it should be a really long footnote. But this footnote is not yet sufficiently long enough to make two lines of footnote text.
+  - name: Cat Memes
+    email: cat@example.com
+    affiliations:
+        - ref: another-u
+    note: Yet another author footnote.
+  - name: Derek Zoolander
+    email: derek@example.com
+    affilations:
+        - ref: some-tech
+abstract: |
+  The high volume of plastic waste and the extremely low recycling rate has created a serious challenge worldwide. Local distributed recycling coupled to additive manufacturing (DRAM) offers a solution by economically incentivizing local recycling. A new DRAM technology capable of processing large quantities of plastic waste quickly is fused granular fabrication (FGF), where solid shredded plastic waste can be reused directly as 3D printing feedstock. This study presents an experimental assessment of multi-material recycling printability, using two of the most common thermoplastics in the beverage industry polyethylene terephthalate (PET) and high-density polyethylene (HDPE) and the feasibility of mixing PET and HDPE to be used as a feedstock material for large-scale 3-D printing. After the material collection, shredding, and cleaning its characterization, and optimization of parameters for 3D printing was performed. Results showed the feasibility of printing a large object from rPET/rHDPE flakes reducing the production cost up to 88%. .
+keywords: 
+  - keyword1
+  - keyword2
+
+# 
+# date: last-modified
+
+# fontsize: 11pt
+# colorlinks: true
+# link-citations: yes
+# linkcolor: Blue
+# urlcolor: Blue
+# citecolor: Blue
+# 
+# format:
+#   pdf:
+#     toc: false
+#     number-sections: true
+csl: assets/RCR.csl
+
+format:
+  html:
+    toc: true
+  pdf:
+    documentclass: article
+    fontsize: 12pt
+    colorlinks: true
+    link-citations: yes
+    linkcolor: Blue
+    urlcolor: Blue
+    citecolor: Blue
+    geometry:
+      - top=30mm
+      - left=20mm
+      - heightrounded
+  # elsevier-pdf:
+  #   keep-tex: true
+  #   journal:
+  #     name: Journal Name
+  #     formatting: review
+#      model: 3p
+bibliography: [assets/Catalina.bib, assets/References.bib]
+  
+---
+
+# Introduction
+
+The disposal of plastic waste is one of the most challenging current environmental concerns given its systemic complexity [@evode2021].
+The mass of micro- / meso- plastics in the oceans are expected to exceed the mass of the global stock of fish by 2050 [@macarthur2017]. 
+More critically, the global plastic annual production is expected to reach 1100 metric tons by the same year [@geyer2020]. 
+The societal awareness on plastic recycling have received substantial attention by scientific, policymaker and general public [@soares2021]. 
+Unfortunately, the statistical analysis on the centralized recycling process proves that it has been largely ineffective [@godswillImpactsPlasticPollution2019a] as only 9% of the plastic that has been produced has been recycled from the total stock produced since 1950 [@Geyer2017]. 
+Therefore, it remains an open challenge to identify alternatives to valorize discarded plastic material. 
+
+<!-- On DRAM -->
+Distributed recycling and additive manufacturing (DRAM), is an innovative technical approach to recycle plastic wastes [@cruzsanchez2020; @dertinger2020]. 
+DRAM was first practiced with recyclebots, which are waste plastic extruders that made filament for conventional fused filament-based 3-D printers [@baechler2013; @zhong2018; @woern2018].
+Past research demonstrated that using distributed recycling fits into the circular economy paradigm [@Ford2016; @Despeisse2016]; where consumers directly recycle their own waste into consumer products from open source designs, from toys for children [@Petersen2017] to adaptive aids for those with arthritis [@gallup2018].
+Distributed manufacturing is now in wide use [@pearce2022]. 
+In this way DRAM-based recycling is done in a closed loop supply chain network [@santander2020]. 
+This type of recycling aims to reduce the environmental impact by the reduction of the transportation from the waste source to recycling facilities [@kreiger2014].
+In that sense, it aims to propose innovative closed-loop strategies using waste materials as raw resources [@romani2021]. 
+
+<!-- Fused Filament Fabrication -->
+Fused filament fabrication (FFF, which is also known as Fused Deposition Modelling --FDM©-) is the most-widespread and established extrusion-based AM technology due to the open source proliferation from the self-replicating rapid prototyper (RepRap) project [@jones2011; @sells2009; @bowyer2014].
+This is due to its simplicity, versatility, low-cost, and ability in the construction of geometrically complex objects in the industrial and prosumer domains [@romani2022]. 
+Indeed, the open-source 3-D approach for 3-D printers has enabled the technology to evolve in a radical manner for manufacturing and prototyping adding value to the recycled material [@cruzsanchez2020]. 
+There are large efforts to find sustainable feedstocks for 3-D printing [@rett2021, @Pakkanen2017]. Several studies in the literature have increase the spectrum of recycled filament materials such as PLA [@cruzsanchez2017; @anderson2017], ABS [@mohammed2017a; @mohammed2017], PET [@zander2018; @vaucher2022], HDPE [@chong2017; @mohammed2017a; @baechler2013] PC [@gaikwad2018].
+In fact, using a comparative life cycle assessment in a low density population case study of Michigan, USA, @Kreiger2014 argued that about of 100 billion MJ of energy per year could be saved in a distributed approach, for the 984 million pounds of HDPE that are recycled in the U.S. There is thus considerable evidence that DRAM can reduce the energy consumption and greenhouse gases of the manufacturing processes. 
+
+
+Most DRAM studies have been using mono-material for the fabrication of feedstock for FFF. 
+There are, however, several examples of mixed materials including wood waste and recycled plastic [@pringle2018; @loschke2019] and textile fibers and recycled plastic [@carrete2021]. Recently, @zander2019b reported the manufacturing of composite filament from recycled PET/PP and PS/PP blending through compatibilizer copolymer such as SEBS. 
+Their results revealed the technical printability of polypropylene blend composite filaments from a thermo-mechanical characterization perspective. 
+Increasing the performance window of blending  materials by compatibilization which could be a relevant path for recycling plastics in a local level and isolated areas contexts (e.g. during humanitarian crises [@savonen2018, @corsini2022,@lipsky2019], supply chain disruptions [@novak2020,@choong202, @salmi2020, @attaran2020 ] and/or isolated off-grid situations using solar-powered 3-D printers [@king2014,@gwamuri2016, @wong2015, @mohammed2018]). 
+Likewise, @vaucher2022 studied the evaluation of the microstructure, mechanical performance, and printing quality of filaments made from rPET and rHDPE varying the wt% of HDPE material from 0 to 10%. They confirmed the increase in the Young’s modulus from 1.7 GPa of the pure PET to 2.1 GPa for all the HDPE concentrations.
+Additionally, the maximum stress of the bends were augmented with high HDPE concentrations. 
+Values were lower than virgin PET filament, yet similar to commercial recycle ones. 
+The addition of rHDPE at higher levels, however, helped to meet the brittle-ductile transition in 15% despite the low interfacial tension of both polymers, allowing the printing of quality parts.
+
+While former studies have proven been successful in FFF, a new approach to DRAM is fused granular fabrication (FGF) or fused particle fabrication (FPF), where the material-extrusion AM systems print directly from pellets, granules, flakes, shred or grinder material [@fontana2022; @woern2018]. 
+In the context of recycling, this could reduce the number of melt/extrusion cycles that degrade the material needed in the filament fabrication process [@cruzsanchez2017a]. 
+The FGF technique opens up the potential of use recycle materials as well as print large-scale objects either with a conventional cartesian 3-D printer [@woern2018], delta 3-D printer [@grassi2019] or hangprinter [@petsiuk2022, @rattan2023 ]. 
+Research groups corroborate that plastic waste can be used as feedstock materials for FGF/FPF. @alexandre2020 assessed the technical and economical dimensions of virgin and shredded PLA printed in a self-modified FGF machine and compared with FFF.
+The investigation showed that the use of FGF reduced printing cost, time and its mechanical performance was comparable with the obtained using the traditional FFF technique. 
+Likewise, @woern2018 found comparable properties between PLA, ABS, PP, and PET recycled and virgin materials. 
+Later publications demonstrated the technical and economic feasibility through the printing of complex objects validating the possibility of recycle plastic with FGF in both conventional and common FFF materials [@byard2019], but also recycle PC [@reich2019b] and rPET [@little2020,]. 
+Few researchers, however, have addressed the problem of the direct printing of recycled multi-materials, which might be a key step forward needed to facilitate the ease of sorting and recycling post-consumer plastic waste materials. 
+
+This study explores the potential of direct 3-D printing two immiscible polymers commonly used in the beverage sector through a distributed recycling process for its easily implementation operation at the local level. To demonstrate the feasibility of the process, the bottled water plastic most used in France of roughly 90% of PET (body of the bottle) and 10% of HDPE (cap) now called *rPET90//rHDPE10*, is used as a test material. 
+The experimental process of collection, characterization, and printing of the recycled material is described and the results are discussed in the context of widespread DRAM adoption at the community level.
+
+
+# References {-}
