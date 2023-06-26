@@ -16,15 +16,12 @@ author:
         corresponding: true
     #note: This is the first author footnote.
   - name: Hakim Boudaoud
-    email: bob@example.com
     affiliations:
         - ref: ERPI
 #    note: |
   - name: Cécile Nouvel
-    email: cat@example.com
     affiliations:
         - ref: ERPI
-    note: Yet another author footnote.
   - name: Fabio A. Cruz Sanchez
     #email: derek@example.com
     affilations:
@@ -66,8 +63,11 @@ format:
     journal:
       name: Journal Name
       formatting: review
-    include-in-header:
-      text: '\usepackage{lineno}\linenumbers'
+    # include-in-header:
+    #   text: '\usepackage{lineno}\linenumbers'
+filters:
+   - latex-environment
+environments: [center, minipage]
 ---
 
 
@@ -94,6 +94,7 @@ URL = c('https://raw.githubusercontent.com/fabbiocrux/Figures/main/')
 
 ```
 
+\newpage
 # Introduction
 
 The disposal of plastic waste is one of the most challenging current environmental concerns given its systemic complexity [@evode2021].
@@ -144,7 +145,17 @@ The experimental process of collection, characterization, and printing of the re
 
 # Materials and Methods
 
+The methodology presented in @fig-1 outlines the approach adopted to develop the study. 
+The four stages *Material*, *Material preparation*, *Printing process* and *Evaluation* were thoroughly studied in order to control the major processes steps and the technical characterization methods.
+In the following subsections, each step is explained. 
 
+![Global framework of the study](figures/Methodology.png){#fig-1 width='90%'}
+
+
+
+## Raw material obtention
+
+The goal of material stage is the collection of post-consumer plastic source. 
 In this study, water of bottles coming from the French brand Cristaline was used as a feedstock. 
 A framework of the process used is shown in Fig. 1.a. 
 Post-consumer bottles were collected by receptacles placed in partnership schools in Lorraine, France. 
@@ -158,26 +169,32 @@ The resultant material is shown in Fig. 1.b.
 
 
 
-
 The material composition was calculated as a function of the mass of the bottles and caps separately. 
 The percent (%) of bottle-cap was found to be ~90%rPET and ~10% rHDPE.
 The complete bottle was shredded without separation of both materials thus this percentage is constant for all the samples. 
 
+
+
+## Material preparation
+
 ### Material particle size analysis -Granulometry- 
 
- In order to ensure the particle size suitable for printing, the characterization of the granulate particles were developed using the open-source ImageJ software [@imagej2023]. The size characteristics of the particles were evaluated between four different samples; vPET (used as a reference) and the raw material sifted in three different sizes 1.5 mm, 3 mm and 5 mm.
+In order to ensure the particle size suitable for printing, the characterization of the granulate particles were developed using the open-source ImageJ software [@imagej2023].
+The size characteristics of the particles were evaluated between four different samples; vPET (used as a reference) and the raw material sifted in three different sizes $1.5~mm$, $3~mm$ and $5~mm$.
  
  
-### Fourier-transform infrared spectroscopy -FTIR- 
+### Fourier-transform infrared spectroscopy --FTIR- 
 
- FTIR spectroscopy was carried out to determine the nature of the bottle and determine if there were impurities, plasticizers or additives that could be detected. 
-The analysis were made on samples of rPET and rHDPE separately and then a printed sample of both materials to determine if there was possible to observe a chemical bonding. Every sample was measured in two different points, three times in each point then curves were normalized and analyzed with the Origin Pro 8 [@https://www.originlab.com/origin].
-The Fourier transform infrared spectra have been recorded in the range of $4000 cm-1 to 375 cm-1 with resolution 4 cm-1-using Bruker IFS 66V spectrophotometer. 
+FTIR spectroscopy was carried out to determine the nature of the bottle and determine if there were impurities, plasticizers or additives that could be detected. 
+The analysis were made on samples of rPET and rHDPE separately and then a printed sample of both materials to determine if there was possible to observe a chemical bonding.
+Every sample was measured in two different points, three times in each point then curves were normalized and analyzed with the Origin Pro 8 [@https://www.originlab.com/origin].
+The Fourier transform infrared spectra have been recorded in the range of $4000~cm^{-1}$ to $375~cm^{-1}$ with resolution $4~cm^{-1}$ using Bruker IFS 66V spectrophotometer. 
 
 
-### Differential scanning calorimetry 
+### Differential scanning calorimetry --DSC-
 
-  Differential scanning calorimetry analysis were performed with a DSC-1 Mettler Toledo with STARe software operating under nitrogen atmosphere at heating rate and cooling rate of 10~°C/min. rPET, rHDPE and rPET90//rHDPE10 samples were investigated using three cycles: first heating from 20°C to 270 °C, cooling to 20 °C and reheating to 270°C.
+Differential scanning calorimetry analysis were performed with a DSC-1 Mettler Toledo with STARe software operating under nitrogen atmosphere at heating rate and cooling rate of $10~°C/min$.
+rPET, rHDPE and rPET90//rHDPE10 samples were investigated using three cycles: first heating from 20°C to 270 °C, cooling to 20 °C and reheating to 270°C.
 The rHDPE sample was analyzed following similar cycles but with the maximum temperature set at 250°C and pBC with temperatures from -20 to 270°C.
 Glass transition temperature (Tg) of rPET was determined during the first heating cycle, while rPET90//rHDPE10 (Tg) during the second heating cycle along with the melting point of all materials. 
 Crystallization temperature (Tc) of the each of the materials was determined during the cooling cycle.
@@ -186,33 +203,45 @@ The degree of crystallinity (Xc) was calculated from the second cycle for recycl
 
 $$
 X_{c}(\%) = \frac{\Delta H_{m}}{w \cdot \Delta H_{m}^\circ}
-$$
-Where, $\Delta H_{m}$ is the latent heat of melt, $w$ is weight percentage of polymer in the blend, and $\Delta H_{m}^\circ$ is the reference heat of 100% crystalline PET ($140~J/g$) and HDPE ($293~J/g$), respectively, provided in the literature [@pan2020; @kratofil2006).
+$$ {#eq-dsc}
 
-## Melt Flow Index -MFI- 
+Where, $\Delta H_{m}$ is the latent heat of melt, $w$ is weight percentage of polymer in the blend, and $\Delta H_{m}^\circ$ is the reference heat of 100% crystalline PET ($140~J/g$) and HDPE ($293~J/g$), respectively, provided in the literature [@pan2020; @kratofil2006].
+
+### Melt Flow Index --MFI- 
 
 The melt-flow index (MFI) of rPET90//rHDPE10 flakes was determined using a Instron CEAST MF20. 
-The analysis was performed using three samples of ~5 g at 255 °C using a 2.16 Kg weight according to ASTM D1238. The process was repeated three times. The average value of the three results was then reported with gr/10 min unit.
+The analysis was performed using three samples of ~5 g at 255 °C using a 2.16 kg weight according to ASTM D1238.
+The process was repeated three times.
+The average value of the three results was then reported with $gr/10 \times min$ unit.
 
-## Density 
+### Density 
 
-In order to calculate the material’s density, first; the volume was found measuring the dimensions of a solid $50x50x50~mm$ cubic geometry fabricated injecting rPET90//rHDPE10 flakes into a square mould with a known volume using open-source desktop injection  (Holipress, Holimaker, France) machine [@https://holimaker.fr/holipress/].
+In order to calculate the material’s density, first; the volume was found measuring the dimensions of a solid $50x50x50~mm$ cubic geometry fabricated injecting rPET90//rHDPE10 flakes into a square mould with a known volume using open-source desktop injection  (Holipress, Holimaker, France) machine.
 Then the model was weighed, and the mass was obtained.
-Finally, density was calculated as expressed in equation (2). To ensure the accuracy the test was performed twice and the average value was reported in g/cm3.
+Finally, density was calculated as expressed in @eq-density. 
+To ensure the accuracy the test was performed twice and the average value was reported in $g/cm^{3}$.
 
 $$
 \rho = V/m    
+$${#eq-density}
 
-$$
 Where, $\rho$ is the density, $V$ is the volume, and $m$ the mass.
 
 
-## Case of study 
+Afterwards, experimental results were compared with the theoretical blend density which could be calculated by @eq-density_theory [@mishra1989].
+
+$$
+\rho_{12}= \frac{1}{\frac{W_{1}}{\rho_{2}} + \frac{W_{2}}{\rho_{2}}}                                               
+$${#eq-density_theory}
+
+Where, $\rho_{12}$ is the density of the blend, $W_{1}$  and $W_{2}$, the weight fractions of each polymer, $\rho_{1}$ and $\rho_{2}$, the theoretical density of each polymer for PET ($~1.38~g/cm^{3}$) and HDPE 0.93 to 0.97 $g/cm^{3}$ [@jonathanguidigo12017].
+
+
+## Printing process
 
 ### Establishing optimal parameters 
 
-Establishing optimum combinations of parameters is essential for better quality and mechanical properties of the printed parts [@jaisinghsheoran2020]. 
-According to @oberloier2022, particle swarm optimization (PSO) is an effective and time-effective method for this purpose. 
+Establishing optimum combinations of parameters is essential for better quality and mechanical properties of the printed parts [@jaisinghsheoran2020]. According to @oberloier2022, particle swarm optimization (PSO) is an effective and time-effective method for this purpose. 
 The optimization of the 3-D printing parameters for the rPET90//rHDPE10 material in the GigabotX was performed using the open-source PSO Experimenter platform (available in Linux), following the methodology developed by @oberloier2022.
 Three process benchmark artifacts were printed; line, plane, and cube. 
 They were modeled in CAD software Onshape CAD v1.150 and sliced using Prusaslicer v2.52.0. The geometry models and dimensions are shown in Fig. 2. 
@@ -220,11 +249,12 @@ They were modeled in CAD software Onshape CAD v1.150 and sliced using Prusaslice
 ![Dimensions and CAD models of the geometries used for parameters optimization.](figures/Figure-2.png)
 
 Four parameters were assessed: 
-the temperature of the bottom (nozzle) and bed, the printing speed and extrusion multiplier [@oberloier2022a]. 
+1) the nozlle temperature, 2) bed temperature, 3) the printing speed and 4) extrusion multiplier [@oberloier2022a]. 
 The initial parameters for the line are presented in Table 1.a while other parameters were obtained in preliminary experimental work shown in Table 1.b. Finally, the PSO tuning parameters were found in the previous PSO work [@oberloier2022] Table 1.c.
 
 
-```{r}
+
+```{r, include=FALSE}
 table_1a <- read_excel("tables/tables.xlsx", sheet="Table1.a")
 table_1b <- read_excel("tables/tables.xlsx", sheet="Table1.b")
 #table_1c <- read_excel("tables/tables.xlsx", sheet="Table1.b")
@@ -232,6 +262,21 @@ table_1b <- read_excel("tables/tables.xlsx", sheet="Table1.b")
 
 
 ```{r}
+#| tbl-cap: "Overall header"
+table_1a %>% 
+kbl(booktabs = T) %>% kable_styling(latex_options = c("striped"),font_size = 7)
+```
+
+
+```{r}
+#| tbl-cap: "Overall header"
+table_1b %>% 
+   kbl(booktabs = T) %>%  kable_styling(latex_options = c("striped"), font_size = 7, full_width = F)   
+```
+
+
+
+```{r, include=FALSE}
 #| tbl-cap: "Overall header"
 #| tbl-subcap: 
 #|   - "Line optimization initial parameters"
@@ -251,9 +296,23 @@ kbl(table_1a, booktabs = T) %>% kable_styling(latex_options = c("striped"),font_
 
 
 
-### Fused Granular Fabrication
+::: {.minipage arguments=".6\textwidth"}
+Lorem ipsum dolor sit amet consectetur adipiscing elit morbi, vivamus erat himenaeos litora cras magnis blandit leo, etiam turpis lectus nullam feugiat porttitor dis. Non ultricies mus turpis in habitant auctor euismod duis scelerisque porttitor, mattis metus nisl risus leo curabitur laoreet eget varius. Etiam sed tortor nulla quis vehicula sodales non convallis aliquam phasellus, ut facilisis sociis molestie vel sagittis eu luctus.
 
-To print the raw material obtained, a 3-heat-zone modified open-source printer (Gigabot XL re:3D, Houston, TX, USA) was used. The machine is a single screw extrusion-based 3-D printer capable of direct printing pellets, flakes or granules, with a nozzle size of 1.75 mm. For this study, a chair was printed to evaluate the ability for the material to 3-D print and the machine capacity to print large-objects such as a piece of furniture. The ideal parameters found for the cube geometry were used to print the final part.
+1. firstly
+1. secondly
+1. thirdly
+1. quarto
+:::
+::: {.minipage arguments=".3\textwidth"}
+![Granulometry analysis](figures/Figure-3.png)
+:::
+
+### Fused Granular Fabrication --FGF-
+
+To print the raw material obtained, a 3-heat-zone modified open-source printer (Gigabot XL re:3D, Houston, TX, USA) was used. The machine is a single screw extrusion-based 3-D printer capable of direct printing pellets, flakes or granules, with a nozzle size of 1.75 mm. 
+For this study, a chair was printed to evaluate the ability for the material to 3-D print and the machine capacity to print large-objects such as a piece of furniture. 
+The ideal parameters found for the cube geometry were used to print the final part.
 
 
 # Results and discussion 
@@ -261,7 +320,9 @@ To print the raw material obtained, a 3-heat-zone modified open-source printer (
 ## Material characterization 
 
 Both polymeric components of the bottle as well as the blend were characterized and analyzed to determine their properties using different methods as explained in the previous section.    
-Material particle size analysis (granulometry) 
+
+
+### Material particle size analysis (granulometry) 
 
 The material after shredding has an irregular shape, which led to machine clogging and generated under-extrusion issues, lowering the quality of the prints.
 Therefore, granulometry evaluation is essential to control these issues. 
@@ -269,11 +330,12 @@ Previous studies demonstrated that particles with areas smaller than $22~mm^{2}$
 From the experiments conducted, however, particles with areas above $10~mm^{2}$ clogged in the feeding system and auger screw of the machine. 
 Therefore, granulometry analysis was performed using three different mesh sizes. 
 
-Figure 3 shows the results obtained, where particles sifted at 5 mm had an average area similar to the reference. There are, however, particles with areas over 9 mm2 which blocked in the feeding and extrusion section. Particles sifted to 1.5 mm showed a distribution with areas from 0 to proximately 3 mm2, this area was considered too low for printing. Small particles can completely melt in the first heat zone obstructing the consistent flow of other particles and not allowing the pressure needed to extrude the melted particles lower in the screw. Although flakes of 3 mm show a more dispersed distribution and slightly lower area compared with the reference, those particles were found to be optimal for printing. The final objects, however, still displayed under-extrusion issues. For this reason, a crammer was implemented [@little2020]; which physically pushes particles to the auger to convey them from feeding tube into the extruder. After the crammer implementation under-extrusion issues were significatively decreased. It was concluded that flakes with areas between 1.5 mm2 to 10 mm2 were optimum for print using a crammer able to aid the feeding system.
+Figure 3 shows the results obtained, where particles sifted at 5 mm had an average area similar to the reference. There are, however, particles with areas over 9 mm2 which blocked in the feeding and extrusion section. Particles sifted to 1.5 mm showed a distribution with areas from 0 to proximately 3 mm2, this area was considered too low for printing. Small particles can completely melt in the first heat zone obstructing the consistent flow of other particles and not allowing the pressure needed to extrude the melted particles lower in the screw. Although flakes of 3 mm show a more dispersed distribution and slightly lower area compared with the reference, those particles were found to be optimal for printing. The final objects, however, still displayed under-extrusion issues. For this reason, a crammer was implemented [@little2020]; which physically pushes particles to the auger to convey them from feeding tube into the extruder.
+After the crammer implementation under-extrusion issues were significatively decreased. It was concluded that flakes with areas between 1.5 mm2 to 10 mm2 were optimum for print using a crammer able to aid the feeding system.
 
 
+![Granulometry analysis](figures/Figure-3.png)
 
-Fig. 3. Granulometry analysis 
 
 ## Chemical analysis from FTIR 
 
@@ -281,16 +343,16 @@ Chemical structure information of the materials was obtained using FTIR spectros
 The spectrum of the printed blend (rPET90//rHDPE10) had the same characteristic peaks as the bottle, confirming the PET dominant content. There are, however, observable differences between 1000 cm-1 and 720 cm-1  and in the bond of C-H (2915cm-1 and 2847 cm-1 peaks), confirming the presence of HDPE (cap). The shifting observed can be attributed to the hydrogen interactions between both materials.
 
  
-Fig 4. FTIR spectra of rPET, rHDPE and their blend
+![FTIR spectra of rPET, rHDPE and their blend](figures/Figure_4.png)
 
 ## Thermal analysis DSC
 
-The thermal properties of both recycled materials and their blend were characterized via DSC to have a starting point for the 3-D printing process parameter optimization. From the representative heating and cooling thermograms shown in Fig. 5, two distinct endothermic peaks are observed in the printed blend sample that are associated with fusion of the crystalline fractions of rHDPE and rPET, which confirms the immiscibility of both materials. Moreover, a significant reduction in the enthalpy of fusion and crystallization of the rHDPE in the blend is attributed to the low percentage of HDPE in the blend. The observation of cold crystallization peak in the blend but not in the individual polymers, however, can be attributed to an interaction between both polymers, where the rHDPE might act as a nucleating agent.
+The thermal properties of both recycled materials and their blend were characterized via DSC to have a starting point for the 3-D printing process parameter optimization. 
+From the representative heating and cooling thermograms shown in Fig. 5, two distinct endothermic peaks are observed in the printed blend sample that are associated with fusion of the crystalline fractions of rHDPE and rPET, which confirms the immiscibility of both materials. Moreover, a significant reduction in the enthalpy of fusion and crystallization of the rHDPE in the blend is attributed to the low percentage of HDPE in the blend. The observation of cold crystallization peak in the blend but not in the individual polymers, however, can be attributed to an interaction between both polymers, where the rHDPE might act as a nucleating agent.
  Table 2. list the thermal properties for rPET, rHDPE and rPET90//rHDPE10.  The melting point for rHDPE and rPET are 131.7 °C and 249.9 °C, respectively and are similar to those found in the literature [@vaucher2022, @MorphologyPropertiesMicrofibrillar2009, @chen2015]. It is observed that the melting and crystallization temperature of rPET shifted to a higher value, while slightly decreasing for rHDPE. In addition, the crystallization of rPET was found to be somewhat affected by the addition of rHDPE as it was increased 4%. It is likely the addition of the rHDPE acted as germination point for crystallization [@vaucher2022]. The slight changes in the rPET temperatures of fusion-crystallization and degree of crystallinity showed the interaction of both polymers.  
 
   
- 
-Fig. 5 - DSC thermograms of recycled materials and blend. 
+![DSC thermograms of recycled materials and blend.](figures/Figure_5a.png) 
 
 
 Table.2 Thermal analysis of rPET, rHDPE and their blend.
@@ -312,7 +374,6 @@ MFI tests were performed three times and the results of the rPET90//rHDPE10 was 
 ρ_12=1/((W_1  )/ρ_1 +W_2/ρ_2 ) .                                                     (3)
 Where, ρ_12 is the density of the blend, W_(1 )  and W_(2 ), the weight fractions of each polymer, ρ_1 and ρ_1, the theoretical density of each polymer.
 
-# Case of study
 
 ## Particle swarm optimization (PSO) Experimenter 
 
@@ -353,5 +414,8 @@ Acknowledgements
 
 The authors thank the LUE program for the financing of the thesis, the LF2L platform, INEDIT European project and the Thompson endowment.
 References 
+
+
+\newpage
 
 # References {-}
