@@ -120,7 +120,7 @@ In that sense, it aims to propose innovative closed-loop strategies using waste 
 <!-- Fused Filament Fabrication -->
 
 Fused filament fabrication (FFF, which is also known as Fused Deposition Modelling --FDM©-) is the most-widespread and established extrusion-based AM technology due to the open source proliferation from the self-replicating rapid prototyper (RepRap) project [@jones2011; @sells2009; @bowyer2014].
-This is due to its simplicity, versatility, low-cost, and ability in the construction of geometrically complex objects in the industrial and prosumer domains [@romani2022].
+This is due to its simplicity, versatility, low-cost, and ability in the construction of geometrically complex objects in the industrial and prosumer domains [@romani2021].
 Indeed, the open-source 3-D approach for 3-D printers has enabled the technology to evolve in a radical manner for manufacturing and prototyping adding value to the recycled material [@cruzsanchez2020].
 There are large efforts to find sustainable feedstocks for 3-D printing [@rett2021, @Pakkanen2017].
 Several studies in the literature have increase the spectrum of recycled filament materials such as PLA [@cruzsanchez2017; @anderson2017], ABS [@mohammed2017a; @mohammed2017], PET [@zander2018; @vaucher2022], HDPE [@chong2017; @mohammed2017a; @baechler2013] PC [@gaikwad2018].
@@ -131,7 +131,7 @@ Most DRAM studies have been using mono-material for the fabrication of feedstock
 There are, however, several examples of mixed materials including wood waste and recycled plastic [@pringle2018; @loschke2019] and textile fibers and recycled plastic [@carrete2021].
 Recently, @Zander2019 reported the manufacturing of composite filament from recycled PET/PP and PS/PP blending through compatibilizer copolymer such as SEBS.
 Their results revealed the technical printability of polypropylene blend composite filaments from a thermo-mechanical characterization perspective.
-Increasing the performance window of blending materials by compatibilization which could be a relevant path for recycling plastics in a local level and isolated areas contexts (e.g. during humanitarian crises [@savonen2018, @corsini2022,@lipsky2019], supply chain disruptions [@novak2020,@choong202, @salmi2020, @attaran2020] and/or isolated off-grid situations using solar-powered 3-D printers [@king2014,@gwamuri2016, @wong2015, @mohammed2018]).
+Increasing the performance window of blending materials by compatibilization which could be a relevant path for recycling plastics in a local level and isolated areas contexts (e.g. during humanitarian crises [@savonen2018, @corsini2022,@lipsky2019], supply chain disruptions [@novak2020,@choong2020, @salmi2020, @attaran2020] and/or isolated off-grid situations using solar-powered 3-D printers [@king2014,@gwamuri2016, @wong2015, @Mohammed2018]).
 Likewise, @vaucher2022 studied the evaluation of the microstructure, mechanical performance, and printing quality of filaments made from rPET and rHDPE varying the wt% of HDPE material from 0 to 10%.
 They confirmed the increase in the Young's modulus from 1.7 GPa of the pure PET to 2.1 GPa for all the HDPE concentrations.
 Additionally, the maximum stress of the bends were augmented with high HDPE concentrations.
@@ -202,7 +202,7 @@ rPET, rHDPE and rPET90//rHDPE10 samples were investigated using three cycles: fi
 The rHDPE sample was analyzed following similar cycles but with the maximum temperature set at 250°C and pBC with temperatures from -20 to 270°C.
 Glass transition temperature (Tg) of rPET was determined during the first heating cycle, while rPET90//rHDPE10 (Tg) during the second heating cycle along with the melting point of all materials.
 Crystallization temperature (Tc) of the each of the materials was determined during the cooling cycle.
-The degree of crystallinity (Xc) was calculated from the second cycle for recycled materials and first cycle for the blend as expressed in equation (1) [@aghavi2018a; @pan2020]:
+The degree of crystallinity (Xc) was calculated from the second cycle for recycled materials and first cycle for the blend as expressed in equation (1) [@taghavi2018; @pan2020]:
 
 $$
 X_{c}(\%) = \frac{\Delta H_{m}}{w \cdot \Delta H_{m}^\circ}
@@ -322,7 +322,7 @@ It was concluded that flakes with areas between $1.5~mm^{2}$ to $10~mm^{2}$ were
 Chemical structure information of the materials was obtained using FTIR spectroscopy, which provided analysis of the characteristic spectral bands of the polymers.
 First, for the rPET (bottle) four characteristic bands can be observed Fig 4, one in $1713 cm^{-1}$ representing the $C=O$ double bond, the $C-O$ single bond ester at $1240 cm^{-1}$, $1093 cm^{-1}$ band corresponding to the methylene group and vibrations of the ester bond and finally, a band $722 cm^{-1}$ the CH2 rocking bending vibration.
 
-Similar results were obtained in the literature for PET coming from recycled water bottles, soda bottles and food containers [@Zanders2018].
+Similar results were obtained in the literature for PET coming from recycled water bottles, soda bottles and food containers [@zander2018].
 For rHDPE (caps), four characteristic peaks were observed, the bond of C-H functional group in peaks $2915cm^{-1}$ and $2847~cm^{-1}$, main bending mode of the -CH2 in $1465~cm^{-1}$ and CH2 rocking bending vibration at $729 ~cm^{-1}$.
 These results confirmed the chemical structures of starting materials.
 Additionally, other indicative resonances besides those associated with the polymer structures were not observed, concluding that additives or plasticizers in significative quantities were not present in either sample.
