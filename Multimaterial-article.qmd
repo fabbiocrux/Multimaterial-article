@@ -51,10 +51,15 @@ geometry:
 bibliography: [assets/Catalina.bib, assets/References.bib]
 csl: assets/RCR.csl
 #format: docx
+# format:
+#   pdf:
+#     toc: false
+#     documentclass: article
+#     number-sections: true
 format:
   elsevier-pdf:
-    keep-tex: true
     cite-method: citeproc
+    keep-tex: true
     colorlinks: true
     link-citations: true
     linkcolor: Blue
