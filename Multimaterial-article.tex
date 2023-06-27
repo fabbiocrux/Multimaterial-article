@@ -116,6 +116,7 @@
 \usepackage[normalem]{ulem}
 \usepackage{makecell}
 \usepackage{xcolor}
+\usepackage{lineno} \usepackage{siunitx}
 \makeatletter
 \makeatother
 \makeatletter
@@ -256,7 +257,7 @@ production cost up to 88\%. .
     keyword2
 \end{keyword}
 \end{frontmatter}
-    \ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[enhanced, boxrule=0pt, frame hidden, interior hidden, borderline west={3pt}{0pt}{shadecolor}, breakable, sharp corners]}{\end{tcolorbox}}\fi
+    \ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[enhanced, borderline west={3pt}{0pt}{shadecolor}, interior hidden, frame hidden, breakable, boxrule=0pt, sharp corners]}{\end{tcolorbox}}\fi
 
 \newpage
 
@@ -277,8 +278,8 @@ policymaker and general public
 (\protect\hyperlink{ref-soares2021}{Soares et al., 2021}).
 Unfortunately, the statistical analysis on the centralized recycling
 process proves that it has been largely ineffective
-(\protect\hyperlink{ref-godswillImpactsPlasticPollution2019a}{\textbf{godswillImpactsPlasticPollution2019a?}})
-as only 9\% of the plastic that has been produced has been recycled from
+(\protect\hyperlink{ref-Siltaloppi2021}{Siltaloppi and Jähi, 2021}) as
+only 9\% of the plastic that has been produced has been recycled from
 the total stock produced since 1950
 (\protect\hyperlink{ref-Geyer2017}{Geyer et al., 2017}). Therefore, it
 remains an open challenge to identify alternatives to valorize discarded
@@ -491,11 +492,10 @@ percentage is constant for all the samples.
 
 In order to ensure the particle size suitable for printing, the
 characterization of the granulate particles were developed using the
-open-source ImageJ software
-(\protect\hyperlink{ref-imagej2023}{\textbf{imagej2023?}}). The size
-characteristics of the particles were evaluated between four different
-samples; vPET (used as a reference) and the raw material sifted in three
-different sizes \(1.5~mm\), \(3~mm\) and \(5~mm\).
+open-source ImageJ software (\protect\hyperlink{ref-imagej2023}{ImageJ,
+2023}). The size characteristics of the particles were evaluated between
+four different samples; vPET (used as a reference) and the raw material
+sifted in three different sizes \(1.5~mm\), \(3~mm\) and \(5~mm\).
 
 \hypertarget{fourier-transform-infrared-spectroscopy-ftir-}{%
 \subsubsection{Fourier-transform infrared spectroscopy
@@ -620,17 +620,23 @@ optimization.}
 
 \end{figure}
 
-Four parameters were assessed: 1) the nozlle temperature, 2) bed
+Four parameters were assessed: 1) the nozle temperature, 2) bed
 temperature, 3) the printing speed and 4) extrusion multiplier
 (\protect\hyperlink{ref-oberloier2022a}{Oberloier et al., 2022b}). The
-initial parameters for the line are presented in Table 1.a while other
-parameters were obtained in preliminary experimental work shown in Table
-1.b. Finally, the PSO tuning parameters were found in the previous PSO
-work (\protect\hyperlink{ref-oberloier2022}{Oberloier et al., 2022a})
-Table 1.c.
+initial parameters for the line are presented in \textbf{?@tbl-table1}
+while other parameters were obtained in preliminary experimental work
+shown in Table 1.b. Finally, the PSO tuning parameters were found in the
+previous PSO work (\protect\hyperlink{ref-oberloier2022}{Oberloier et
+al., 2022a}) Table 1.c.
 
 \begin{table}
-\caption{Overall header}\tabularnewline
+
+\caption{Example}\begin{minipage}[t]{\linewidth}
+\subcaption{\label{tbl-anonymous-1867363-1}}
+
+{\centering 
+
+\caption{Line optimization initial parameters }\tabularnewline
 
 \centering\begingroup\fontsize{7}{9}\selectfont
 
@@ -645,10 +651,18 @@ E & 0.5 & 2 & 1 & FALSE & Extrusion Multiplier\\
 \bottomrule
 \end{tabular}
 \endgroup{}
-\end{table}
 
-\begin{table}
-\caption{Overall header}\tabularnewline
+}
+
+\end{minipage}%
+\newline
+\begin{minipage}[t]{0.50\linewidth}
+\subcaption{\label{tbl-anonymous-1867363-2}}
+
+{\centering 
+
+\caption{Fixed parameters to perform printing parameters optimization based on
+PSO }\tabularnewline
 
 \centering\begingroup\fontsize{7}{9}\selectfont
 
@@ -666,46 +680,46 @@ Infill density & 2 & \%\\
 \bottomrule
 \end{tabular}
 \endgroup{}
-\end{table}
-
-\begin{minipage}{.6\textwidth}
-
-Lorem ipsum dolor sit amet consectetur adipiscing elit morbi, vivamus
-erat himenaeos litora cras magnis blandit leo, etiam turpis lectus
-nullam feugiat porttitor dis. Non ultricies mus turpis in habitant
-auctor euismod duis scelerisque porttitor, mattis metus nisl risus leo
-curabitur laoreet eget varius. Etiam sed tortor nulla quis vehicula
-sodales non convallis aliquam phasellus, ut facilisis sociis molestie
-vel sagittis eu luctus.
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  firstly
-\item
-  secondly
-\item
-  thirdly
-\item
-  quarto
-\end{enumerate}
-
-\end{minipage}
-
-\begin{minipage}{.3\textwidth}
-
-\begin{figure}
-
-{\centering \includegraphics{figures/Figure-3.png}
 
 }
 
-\caption{Granulometry analysis}
+\end{minipage}%
+%
+\begin{minipage}[t]{0.05\linewidth}
 
-\end{figure}
+{\centering 
 
-\end{minipage}
+~
+
+}
+
+\end{minipage}%
+%
+\begin{minipage}[t]{0.45\linewidth}
+\subcaption{\label{tbl-anonymous-1867363-3}}
+
+{\centering 
+
+\caption{Recommended parameters for PSO tuning }\tabularnewline
+
+\centering\begingroup\fontsize{7}{9}\selectfont
+
+\begin{tabular}[t]{lr>{\raggedright\arraybackslash}p{4cm}}
+\toprule
+Variable & Value & Description\\
+\midrule
+\cellcolor{gray!6}{Kv} & \cellcolor{gray!6}{0.5} & \cellcolor{gray!6}{The emphasis given to the velocity component}\\
+Kp & 1.0 & The emphasis given to a particle's personal best position\\
+\cellcolor{gray!6}{Kg} & \cellcolor{gray!6}{2.0} & \cellcolor{gray!6}{The emphasis given to the swarm's group best position}\\
+\bottomrule
+\end{tabular}
+\endgroup{}
+
+}
+
+\end{minipage}%
+
+\end{table}
 
 \hypertarget{fused-granular-fabrication-fgf-}{%
 \subsubsection{Fused Granular Fabrication
@@ -714,7 +728,7 @@ vel sagittis eu luctus.
 To print the raw material obtained, a 3-heat-zone modified open-source
 printer (Gigabot XL re:3D, Houston, TX, USA) was used. The machine is a
 single screw extrusion-based 3-D printer capable of direct printing
-pellets, flakes or granules, with a nozzle size of 1.75 mm. For this
+pellets, flakes or granules, with a nozzle size of \(1.75~mm\). For this
 study, a chair was printed to evaluate the ability for the material to
 3-D print and the machine capacity to print large-objects such as a
 piece of furniture. The ideal parameters found for the cube geometry
@@ -745,24 +759,25 @@ experiments conducted, however, particles with areas above \(10~mm^{2}\)
 clogged in the feeding system and auger screw of the machine. Therefore,
 granulometry analysis was performed using three different mesh sizes.
 
-Figure 3 shows the results obtained, where particles sifted at 5 mm had
-an average area similar to the reference. There are, however, particles
-with areas over 9 mm2 which blocked in the feeding and extrusion
-section. Particles sifted to 1.5 mm showed a distribution with areas
-from 0 to proximately 3 mm2, this area was considered too low for
-printing. Small particles can completely melt in the first heat zone
-obstructing the consistent flow of other particles and not allowing the
-pressure needed to extrude the melted particles lower in the screw.
-Although flakes of 3 mm show a more dispersed distribution and slightly
-lower area compared with the reference, those particles were found to be
-optimal for printing. The final objects, however, still displayed
-under-extrusion issues. For this reason, a crammer was implemented
+Figure~\ref{fig-granulometry} shows the results obtained, where
+particles sifted at \(5~mm\) had an average area similar to the
+reference. There are, however, particles with areas over \(9~mm^{2}\)
+which blocked in the feeding and extrusion section. Particles sifted to
+\(1.5~mm\) showed a distribution with areas from 0 to proximately
+\(3~mm^{2}\), this area was considered too low for printing. Small
+particles can completely melt in the first heat zone obstructing the
+consistent flow of other particles and not allowing the pressure needed
+to extrude the melted particles lower in the screw. Although flakes of 3
+mm show a more dispersed distribution and slightly lower area compared
+with the reference, those particles were found to be optimal for
+printing. The final objects, however, still displayed under-extrusion
+issues. For this reason, a crammer was implemented
 (\protect\hyperlink{ref-little2020}{Little et al., 2020}); which
 physically pushes particles to the auger to convey them from feeding
 tube into the extruder. After the crammer implementation under-extrusion
 issues were significatively decreased. It was concluded that flakes with
-areas between 1.5 mm2 to 10 mm2 were optimum for print using a crammer
-able to aid the feeding system.
+areas between \(1.5~mm^{2}\) to \(10~mm^{2}\) were optimum for print
+using a crammer able to aid the feeding system.
 
 \begin{figure}
 
@@ -770,7 +785,7 @@ able to aid the feeding system.
 
 }
 
-\caption{Granulometry analysis}
+\caption{\label{fig-granulometry}Granulometry analysis}
 
 \end{figure}
 
@@ -781,26 +796,29 @@ FTIR}\label{chemical-analysis-from-ftir}}
 Chemical structure information of the materials was obtained using FTIR
 spectroscopy, which provided analysis of the characteristic spectral
 bands of the polymers. First, for the rPET (bottle) four characteristic
-bands can be observed Fig 4, one in 1713 cm-1 representing the C=O
-double bond, the C-O single bond ester at 1240 cm-1, 1093 cm-1 band
-corresponding to the methylene group and vibrations of the ester bond
-and finally, a band 722 cm-1 the CH2 rocking bending vibration. Similar
-results were obtained in the literature for PET coming from recycled
-water bottles, soda bottles and food containers
-(\protect\hyperlink{ref-Zanders2018}{\textbf{Zanders2018?}}).For rHDPE
+bands can be observed Fig 4, one in \(1713 cm^{-1}\) representing the
+\(C=O\) double bond, the \(C-O\) single bond ester at \(1240 cm^{-1}\),
+\(1093 cm^{-1}\) band corresponding to the methylene group and
+vibrations of the ester bond and finally, a band \(722 cm^{-1}\) the CH2
+rocking bending vibration.
+
+Similar results were obtained in the literature for PET coming from
+recycled water bottles, soda bottles and food containers
+(\protect\hyperlink{ref-Zanders2018}{\textbf{Zanders2018?}}). For rHDPE
 (caps), four characteristic peaks were observed, the bond of C-H
-functional group in peaks 2915cm-1 and 2847 cm-1, main bending mode of
-the -CH2 in 1465 cm-1 and CH2 rocking bending vibration at 729 cm-1.
-These results confirmed the chemical structures of starting materials.
-Additionally, other indicative resonances besides those associated with
-the polymer structures were not observed, concluding that additives or
-plasticizers in significative quantities were not present in either
-sample. The spectrum of the printed blend (rPET90//rHDPE10) had the same
-characteristic peaks as the bottle, confirming the PET dominant content.
-There are, however, observable differences between 1000 cm-1 and 720
-cm-1 and in the bond of C-H (2915cm-1 and 2847 cm-1 peaks), confirming
-the presence of HDPE (cap). The shifting observed can be attributed to
-the hydrogen interactions between both materials.
+functional group in peaks \(2915cm^{-1}\) and \(2847~cm^{-1}\), main
+bending mode of the -CH2 in \(1465~cm^{-1}\) and CH2 rocking bending
+vibration at \(729 ~cm^{-1}\). These results confirmed the chemical
+structures of starting materials. Additionally, other indicative
+resonances besides those associated with the polymer structures were not
+observed, concluding that additives or plasticizers in significative
+quantities were not present in either sample. The spectrum of the
+printed blend (rPET90//rHDPE10) had the same characteristic peaks as the
+bottle, confirming the PET dominant content. There are, however,
+observable differences between \(1000 ~cm^{-1}\) and \(720 ~cm^{-1}\)
+and in the bond of C-H (\(2915~cm^{-1}\) and \(2847 ~cm^{-1}\) peaks),
+confirming the presence of HDPE (cap). The shifting observed can be
+attributed to the hydrogen interactions between both materials.
 
 \begin{figure}
 
@@ -817,46 +835,87 @@ the hydrogen interactions between both materials.
 
 The thermal properties of both recycled materials and their blend were
 characterized via DSC to have a starting point for the 3-D printing
-process parameter optimization. From the representative heating and
-cooling thermograms shown in Fig. 5, two distinct endothermic peaks are
-observed in the printed blend sample that are associated with fusion of
-the crystalline fractions of rHDPE and rPET, which confirms the
-immiscibility of both materials. Moreover, a significant reduction in
-the enthalpy of fusion and crystallization of the rHDPE in the blend is
-attributed to the low percentage of HDPE in the blend. The observation
-of cold crystallization peak in the blend but not in the individual
-polymers, however, can be attributed to an interaction between both
-polymers, where the rHDPE might act as a nucleating agent. Table 2. list
-the thermal properties for rPET, rHDPE and rPET90//rHDPE10. The melting
-point for rHDPE and rPET are 131.7 °C and 249.9 °C, respectively and are
-similar to those found in the literature
-(\protect\hyperlink{ref-chen2015}{Chen et al., 2015}). It is observed
-that the melting and crystallization temperature of rPET shifted to a
-higher value, while slightly decreasing for rHDPE. In addition, the
-crystallization of rPET was found to be somewhat affected by the
-addition of rHDPE as it was increased 4\%. It is likely the addition of
-the rHDPE acted as germination point for crystallization
+process parameter optimization.
+
+From the representative heating and cooling thermograms shown in Fig. 5,
+two distinct endothermic peaks are observed in the printed blend sample
+that are associated with fusion of the crystalline fractions of rHDPE
+and rPET, which confirms the immiscibility of both materials. Moreover,
+a significant reduction in the enthalpy of fusion and crystallization of
+the rHDPE in the blend is attributed to the low percentage of HDPE in
+the blend. The observation of cold crystallization peak in the blend but
+not in the individual polymers, however, can be attributed to an
+interaction between both polymers, where the rHDPE might act as a
+nucleating agent. Table 2. list the thermal properties for rPET, rHDPE
+and rPET90//rHDPE10. The melting point for rHDPE and rPET are 131.7 °C
+and 249.9 °C, respectively and are similar to those found in the
+literature (\protect\hyperlink{ref-chen2015}{Chen et al., 2015};
+\protect\hyperlink{ref-lei2009}{Lei et al., 2009};
+\protect\hyperlink{ref-vaucher2022}{Vaucher et al., 2022}). It is
+observed that the melting and crystallization temperature of rPET
+shifted to a higher value, while slightly decreasing for rHDPE. In
+addition, the crystallization of rPET was found to be somewhat affected
+by the addition of rHDPE as it was increased 4\%. It is likely the
+addition of the rHDPE acted as germination point for crystallization
 (\protect\hyperlink{ref-vaucher2022}{Vaucher et al., 2022}). The slight
 changes in the rPET temperatures of fusion-crystallization and degree of
 crystallinity showed the interaction of both polymers.
 
 \begin{figure}
 
-{\centering \includegraphics{figures/Figure_5a.png}
+\begin{minipage}[t]{\linewidth}
+
+{\centering 
+
+\raisebox{-\height}{
+
+\includegraphics{figures/Figure_5a.png}
 
 }
 
-\caption{DSC thermograms of recycled materials and blend.}
+}
+
+\subcaption{\label{fig-DCSa}Heating curves}
+\end{minipage}%
+\newline
+\begin{minipage}[t]{\linewidth}
+
+{\centering 
+
+\raisebox{-\height}{
+
+\includegraphics{figures/Figure_5b.png}
+
+}
+
+}
+
+\subcaption{\label{fig-DCSb}Cooling curve}
+\end{minipage}%
+
+\caption{\label{fig-DCS}DSC thermograms of recycled materials and
+blends}
 
 \end{figure}
 
-Table.2 Thermal analysis of rPET, rHDPE and their blend. Sample Glass
-transition Melting Crystallization \% Crystallinity Xc Tg (°C) Tm (°C )
-ΔHm (J/g) Tc (°C ) ΔHc (J/g) ΔHcc (J/g)\\
-rPET 82 249.9 31.6 196.7 34.8 - 22.6\\
-rHDPE - 133.8 172 118.7 158.5 - 58.7\\
-rPET90/rHDPE10 77 / - 254/131.7 40.3/1.30 210.6/117.4 37.9/6.7 6.8 24.8
-18.4
+\begin{table}
+\caption{Thermal analysis of rPET, rHDPE and their blend}\tabularnewline
+
+\centering\begingroup\fontsize{7}{9}\selectfont
+
+\begin{tabular}[t]{llllllll}
+\toprule
+\multicolumn{1}{c}{ } & \multicolumn{1}{c}{Glass transition} & \multicolumn{2}{c}{Melting} & \multicolumn{2}{c}{Crystallization } & \multicolumn{1}{c}{\% Crystallinity} \\
+\cmidrule(l{3pt}r{3pt}){2-2} \cmidrule(l{3pt}r{3pt}){3-4} \cmidrule(l{3pt}r{3pt}){5-6} \cmidrule(l{3pt}r{3pt}){7-7}
+Sample & Tg (°C) & Tm  (°C ) & ΔHm (J/g) & Tc  (°C ) & ΔHc (J/g) & ΔHcc (J/g) & Xc\\
+\midrule
+\cellcolor{gray!6}{rPET} & \cellcolor{gray!6}{82} & \cellcolor{gray!6}{249.9} & \cellcolor{gray!6}{31.6} & \cellcolor{gray!6}{196.7} & \cellcolor{gray!6}{34.8} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{22.6}\\
+rHDPE & - & 133.8 & 172 & 118.7 & 158.5 & - & 58.7\\
+\cellcolor{gray!6}{rPET90/rHDPE10} & \cellcolor{gray!6}{77 / -} & \cellcolor{gray!6}{254/131.7} & \cellcolor{gray!6}{40.3/1.30} & \cellcolor{gray!6}{210.6/117.4} & \cellcolor{gray!6}{37.9/6.7} & \cellcolor{gray!6}{6.8} & \cellcolor{gray!6}{24.8 / 18.4}\\
+\bottomrule
+\end{tabular}
+\endgroup{}
+\end{table}
 
 \hypertarget{rheology-mfi}{%
 \subsection{Rheology MFI}\label{rheology-mfi}}
@@ -871,7 +930,9 @@ material flowed rapidly and the measurement could not be reliably
 obtained. MFI tests were performed three times and the results of the
 rPET90//rHDPE10 was a medium MFI 39.4± 2.4 g/10min, which is roughly
 consistent with values found in literature for rPET
-(\protect\hyperlink{ref-Salminen}{\textbf{Salminen?}}). This result
+(\protect\hyperlink{ref-bustosseibert2022}{Bustos Seibert et al., 2022};
+\protect\hyperlink{ref-nofar2019}{Nofar and Oğuz, 2019};
+\protect\hyperlink{ref-Salminen}{\textbf{Salminen?}}). This result
 suggests that the low percentage addition of HDPE do not highly impact
 the MFI value of rPET. As the material flowed at temperature of 255°C in
 the MFI, it provided the input temperature for 3-D printer parameters
@@ -885,19 +946,17 @@ and weight of the printing object in the slicer. This information is
 useful to find the accurate printing parameters with the PSO
 experimenter as fitness is calculated as a function of the dimensional
 accuracy and weight of the printed object. Hence, density was useful to
-determine the weight of the geometries. From calculations made after
-weight and measuring the rPET90//rHDPE10 injected object, the density of
-the material was found to be 1.13 g/cm3. From the results it was
-observed that the theoretical density of PET (\textasciitilde1.38 g/cm3)
-was slightly decreased with the presence of the HDPE, which has a
-theoretical density range from 0.93 to 0.97 g/cm3
-(\protect\hyperlink{ref-jonathanguidigo12017}{Jonathan GUIDIGO1 et al.,
-2017}). It normally occurs when a polymer is blended with lower density
-polymer. A theoretical blend density could be calculated by equation
-\href{3}{@ mishra1989} ρ\_12=1/((W\_1 )/ρ\_1 +W\_2/ρ\_2 ) . (3) Where,
-ρ\_12 is the density of the blend, W\_(1 ) and W\_(2 ), the weight
-fractions of each polymer, ρ\_1 and ρ\_1, the theoretical density of
-each polymer.
+determine the weight of the geometries.
+
+From calculations made after weight and measuring the rPET90//rHDPE10
+injected object, the density of the material was found to be 1.13
+\(g/cm^{3}\). The inclusion of HDPE in the matrix polymer led to a
+slight decrease in its density, which is a common outcome when a polymer
+is mixed with a lower density polymer. However, if we consider a
+PET/HDPE blend with a mass ratio of 90/10, the calculated theoretical
+density is 1.32 \(g/cm^{3}\). The observed decrease of 14\% in the
+results could be attributed to factors such as experimental conditions
+and manual measurements
 
 \hypertarget{particle-swarm-optimization-pso-experimenter}{%
 \subsection{Particle swarm optimization (PSO)
@@ -912,21 +971,25 @@ one iteration, thus in one iteration five different parameters
 combinations were printed. The first geometry (line) was able to reach a
 fitness of \textless{} 0.1 after six iterations for a total of thirty
 lines printed. The ideal parameters for this geometry are listed in
-column two of Table 3. Afterwards, these parameters were used as initial
-guess for plane geometry, which reached the desired fitness in the first
-iteration. Likewise, cubes were printed using the plane ideal parameter
-as initial guess and optimal parameters, where found in the first
-iteration. Results showed a significant change in the printing speed,
-which lowers at higher geometry complexity. Moreover, the cube geometry
-required a higher extrusion multiplier to fill gaps and overcome
-under-extrusion problems. The optimization of the parameters for the
-three geometries took around 10h reducing the experimental time,
-compared with conventional methods. According to
+column two of Table 3.
+
+Afterwards, these parameters were used as initial guess for plane
+geometry, which reached the desired fitness in the first iteration.
+Likewise, cubes were printed using the plane ideal parameter as initial
+guess and optimal parameters, where found in the first iteration.
+Results showed a significant change in the printing speed, which lowers
+at higher geometry complexity. Moreover, the cube geometry required a
+higher extrusion multiplier to fill gaps and overcome under-extrusion
+problems. The optimization of the parameters for the three geometries
+took around 10h reducing the experimental time, compared with
+conventional methods. According to
 (\protect\hyperlink{ref-oberloier2022}{Oberloier et al., 2022a}) this
 time of experimentation can be reduced 97\%. Indeed, the efficacity of
 PSO in finding global optimum parameters is high, particularly when
 there is a large or complex design space
-(\protect\hyperlink{ref-saad2019a}{Saad et al., 2019, p. selvam2020}).
+(\protect\hyperlink{ref-saad2019a}{Saad et al., 2019};
+\protect\hyperlink{ref-selvam2020}{Selvam et al., 2020}).
+
 Additionally, PSO converge to optimum solutions with fewer iterations
 that DoE methods (\protect\hyperlink{ref-zhang2015}{Zhang et al., 2015})
 while mixing PSO with other meta-heuristic methods has shown higher
@@ -946,6 +1009,7 @@ software has the advantage of being free, open source and user-friendly,
 lessening the initial difficulty. Thus, PSO demonstrated to be an
 effective and high accuracy prediction technique able to find the
 initial optimum parameters for rPET90//rHDPE10 material for FGF/FPF.
+
 From the results it is observe that the optimal parameters may change
 depending of the object printed and each parameter has its own
 variation. One hypothesis is that geometry might play a role in
@@ -958,26 +1022,44 @@ will depend on the geometry of the printed object. Thus, to maintain the
 same thermal history the printing parameters must change as the geometry
 changes. This same effect of thermal history can also have more subtle
 impacts such as degree of crystallization even for PLA
-(\protect\hyperlink{ref-wijnen2018}{Wijnen et al., 2018}).. In addition,
-some physical effects of materials extrusion are magnified with scale.
-The most obvious is the impacts of thermal expansion and contraction.
-Small changes in contraction as a part cools may cause acceptable
-distortions for small prints, but these are magnified for large prints
-(e.g.~causing deformation and in the worst cases delamination or loss of
-bed adhesion)(\protect\hyperlink{ref-shah2019}{Shah et al., 2019}).
+(\protect\hyperlink{ref-wijnen2018}{Wijnen et al., 2018}).
+
+In addition, some physical effects of materials extrusion are magnified
+with scale. The most obvious is the impacts of thermal expansion and
+contraction. Small changes in contraction as a part cools may cause
+acceptable distortions for small prints, but these are magnified for
+large prints (e.g.~causing deformation and in the worst cases
+delamination or loss of bed
+adhesion)(\protect\hyperlink{ref-shah2019}{Shah et al., 2019}).
 Although, (\protect\hyperlink{ref-roschli2019}{Roschli et al., 2019})
 showed the obstacles and possible solutions of the large-scale AM
 according to the way of the parts are designed the incidence of the
 geometry in the printing parameters needs far more detailed future
 studies. Specifically better models for mapping 3-D printing parameter
 optimizations of small printed objects to large volume objects is
-needed. Table 3. Ideal printing parameters for fused granule fabrication
-of waste PET and HDPE blend made from shredded whole plastic water
-bottles.
+needed.
 
-Variable Line value Planes value Cube value Δ Units T1 258 263 264 6
-±3.2 °C Tb 86 82 84 4±2 °C Ps 21 14 10 11±5.6 mm/s E 1.07 0.87 1.32
-0.5±0.3 -
+Table 3. Ideal printing parameters for fused granule fabrication of
+waste PET and HDPE blend made from shredded whole plastic water bottles.
+
+\begin{table}
+\caption{Ideal printing parameters for fused granule fabrication of waste PET and
+HDPE blend made from shredded whole plastic water bottles}\tabularnewline
+
+\centering\begingroup\fontsize{7}{9}\selectfont
+
+\begin{tabular}[t]{llllll}
+\toprule
+Variable & Line value & Planes value & Cube value & Δ & Units\\
+\midrule
+\cellcolor{gray!6}{T1} & \cellcolor{gray!6}{258} & \cellcolor{gray!6}{263} & \cellcolor{gray!6}{264} & \cellcolor{gray!6}{6 ±3.2} & \cellcolor{gray!6}{°C}\\
+Tb & 86 & 82 & 84 & 4±2 & °C\\
+\cellcolor{gray!6}{Ps} & \cellcolor{gray!6}{21} & \cellcolor{gray!6}{14} & \cellcolor{gray!6}{10} & \cellcolor{gray!6}{11±5.6} & \cellcolor{gray!6}{mm/s}\\
+E & 1.07 & 0.87 & 1.32 & 0.5±0.3 & -\\
+\bottomrule
+\end{tabular}
+\endgroup{}
+\end{table}
 
 \hypertarget{functional-object-print}{%
 \subsection{Functional object print}\label{functional-object-print}}
@@ -986,18 +1068,21 @@ The ideal parameters found for the cube geometry were used as final
 parameters for print the case study product, except the print speed for
 the optimized line speed was used to decrease the printing time and
 delamination. This change was performed as according to the PSO results
-the material is printable in a range of 10 to 20 mm/s. Additionally, the
-faster the printing the lesser the time of cooling between the layers
-thus avoiding possible
-delamination(\protect\hyperlink{ref-roschli2019}{Roschli et al., 2019}),
-which is exacerbated for larger objects. The Gigabot X successfully
-produced a piece of furniture from multi-material recycled water bottles
-that included mixing HDPE and PET as shown in Fig. 6.a. The printing
-quality is acceptable as a prototype, proven the machine capacity of
-printing large-scale functional objects where the chair was able to hold
-a child with a mass of 20 kg comfortably as shown in Fig.6 f.~The
-material, in the other hand, needs further evaluation as the printed
-object showed weak bond strength between the adjacent layers
+the material is printable in a range of 10 to 20 \(mm/s\). Additionally,
+the faster the printing the lesser the time of cooling between the
+layers thus avoiding possible delamination
+(\protect\hyperlink{ref-roschli2019}{Roschli et al., 2019}), which is
+exacerbated for larger objects.
+
+The Gigabot X successfully produced a piece of furniture from
+multi-material recycled water bottles that included mixing HDPE and PET
+as shown in Fig. 6.a.
+
+The printing quality is acceptable as a prototype, proven the machine
+capacity of printing large-scale functional objects where the chair was
+able to hold a child with a mass of 20 kg comfortably as shown in Fig.6
+f. The material, in the other hand, needs further evaluation as the
+printed object showed weak bond strength between the adjacent layers
 (delamination Fig. 6.b).This is probably due to the difference in
 chemical properties of both materials or immiscibility
 (\protect\hyperlink{ref-william2021}{William et al., 2021}), high
@@ -1013,10 +1098,12 @@ printing materials like PLA from the print surface
 (\protect\hyperlink{ref-wijnen2018}{Wijnen et al., 2018}). The addition
 of agents that reduce the interphase tension between polymers might help
 to solve the delamination present and enhance the properties of the
-material (\protect\hyperlink{ref-kramer1994}{Kramer et al., 1994}, @
-dai1997, @ inoya2012) as interfacial bond can be enhanced by polymer
-modification (\protect\hyperlink{ref-gao2021}{Gao et al., 2021}){]} and
-viscosity decrement (\protect\hyperlink{ref-ko2019}{Ko et al., 2019}).
+material (\protect\hyperlink{ref-dai1997}{Dai et al., 1997};
+\protect\hyperlink{ref-kramer1994}{Kramer et al., 1994};
+\protect\hyperlink{ref-inoya2012}{\textbf{inoya2012?}}) as interfacial
+bond can be enhanced by polymer modification
+(\protect\hyperlink{ref-gao2021}{Gao et al., 2021}) and viscosity
+decrement (\protect\hyperlink{ref-ko2019}{Ko et al., 2019}).
 Additionally, while printing warping problems were observed, (Fig. 6.c)
 which are likely caused by the high crystallization rates of HDPE
 (\protect\hyperlink{ref-schirmeister2019}{Schirmeister et al., 2019})
@@ -1045,8 +1132,15 @@ Visually it can be observed some vibration and ringing problems (Fig.
 6.e) caused by the machine upgrading, both acceleration and jerk
 (maximum value of the instantaneous speed change) needs finer tuning.
 
-Fig. 6 a to e)Finished children chair and printing issues, f) Usability
-test .
+\begin{figure}
+
+{\centering \includegraphics{figures/Figure6.png}
+
+}
+
+\caption{Finished children chair and printing issues}
+
+\end{figure}
 
 \hypertarget{cost-and-environmental-impact}{%
 \subsubsection{Cost and environmental
@@ -1064,25 +1158,33 @@ as bottles were obtained from post-consumers waste. When labor costs are
 not included the price was significative reduced (\textasciitilde88\%)
 compared with those low cost found in the market {[}@
 https://www.ikea.com/fr/fr/p/mammut-tabouret-enfant-interieur-exterieur-jaune-20382324{]}.
+
 The economics of fabricating the case study product remained competitive
 even if recycled plastic pellets or shreds are used, which can be found
 on the market from 1-10 €/kg. However, labor, maintenance and machine
 devaluation were not considered in the final price and are needed in
-future work for a complete economic evaluation. Regarding the
-environmental impact, although this study does not evaluate the entire
-life cycle of the printed object, various scientific studies have
-already shown feasibility of distributed recycling
-(\protect\hyperlink{ref-santander2020}{Santander et al., 2020, p.
-kerdlap2022}), the comparation between conventional and distributed
-manufacturing in terms of energy consumption and emissions
+future work for a complete economic evaluation.
+
+Regarding the environmental impact, although this study does not
+evaluate the entire life cycle of the printed object, various scientific
+studies have already shown feasibility of distributed recycling
+(\protect\hyperlink{ref-kerdlap2022}{Kerdlap et al., 2022};
+\protect\hyperlink{ref-santander2020}{Santander et al., 2020}), the
+comparation between conventional and distributed manufacturing in terms
+of energy consumption and emissions
 (\protect\hyperlink{ref-Kreiger2013}{Kreiger and Pearce, 2013}),
 environmental performance of AM
 (\protect\hyperlink{ref-colorado2020a}{Colorado et al., 2020}) and the
 appearance of DRAM as a source of raw material for diverse 3-D printers
 coming from post-consumer plastic waste in the form of either filament
-(\protect\hyperlink{ref-mohammed2017a}{Mohammed et al., 2017b}) or
+(\protect\hyperlink{ref-hart2018}{Hart et al., 2018};
+\protect\hyperlink{ref-mikula2021}{Mikula et al., 2021};
+\protect\hyperlink{ref-mohammed2017a}{Mohammed et al., 2017b};
+\protect\hyperlink{ref-pakkanen2017}{Pakkanen et al., 2017b}) or
 granules (\protect\hyperlink{ref-alexandre2020}{Alexandre et al.,
-2020}). Additionally,
+2020}).
+
+Additionally,
 (\protect\hyperlink{ref-caceres-mendoza2023}{Caceres-Mendoza et al.,
 2023}) has developed a complete life of cycle assessment of a DRAM
 system based on the production of PLA filament comparing virgin and
@@ -1090,8 +1192,10 @@ recycled materials. Their environmental results showed a reduction of
 the impacts of production (climate change, fossil depletion, water
 depletion and potential eutrophication) of \textasciitilde97\% compared
 to virgin filament. These results, however, are dependent on the energy
-supply and can vary depending on location.\\
-Conclusion and future work
+supply and can vary depending on location.
+
+\hypertarget{conclusion-and-future-work}{%
+\section{Conclusion and future work}\label{conclusion-and-future-work}}
 
 This study analyzed the feasibility of using mixed post-consumer waste
 as feedstock material for direct 3-D printing without compatibilization.
@@ -1109,7 +1213,8 @@ factors increase in importance as the scale of the 3-D printed part
 increases. The improvement of the material science of the approach can
 also offer an opportunity to improve the quality of the printing
 printing time, lowering the energy consumption of the machine and thus
-improving the economic viability of DRAM with mixed plastic waste.\\
+improving the economic viability of DRAM with mixed plastic waste.
+
 In addition, future work could assess the different types of
 combinations or blends between commodity plastics using or not
 compatibilizer towards its printability, bringing out the possibility of
@@ -1119,11 +1224,16 @@ areas with limited infrastructure opens up the potential of plastic
 revalorization using DRAM.
 
 \hypertarget{declaration-of-competing}{%
-\section{Declaration of competing}\label{declaration-of-competing}}
+\section*{Declaration of competing}\label{declaration-of-competing}}
+\addcontentsline{toc}{section}{Declaration of competing}
 
 The authors declare that they have no known competing financial interest
 or personal relationships that could have appeared to influence the work
 reported in this paper. Acknowledgements
+
+\hypertarget{acknowledgements}{%
+\section*{Acknowledgements}\label{acknowledgements}}
+\addcontentsline{toc}{section}{Acknowledgements}
 
 The authors thank the LUE program for the financing of the thesis, the
 LF2L platform, INEDIT European project and the Thompson endowment.
@@ -1247,6 +1357,12 @@ recycling in an open-source additive manufacturing context: {Mechanical}
 issues. Additive Manufacturing 17, 87--105.
 \url{https://doi.org/10.1016/j.addma.2017.05.013}
 
+\leavevmode\vadjust pre{\hypertarget{ref-dai1997}{}}%
+Dai, C.-A., Jandt, K.D., Iyengar, D.R., Slack, N.L., Dai, K.H.,
+Davidson, W.B., Kramer, E.J., Hui, C.-Y., 1997. Strengthening {Polymer
+Interfaces} with {Triblock Copolymers}. Macromolecules 30, 549--560.
+\url{https://doi.org/10.1021/ma960396s}
+
 \leavevmode\vadjust pre{\hypertarget{ref-dertinger2020}{}}%
 Dertinger, S.C., Gallup, N., Tanikella, N.G., Grasso, M., Vahid, S.,
 Foot, P.J.S., Pearce, J.M., 2020. Technical pathways for distributed
@@ -1331,6 +1447,10 @@ meal-ready-to-eat ({MRE}) pouches into polymer filament for material
 extrusion additive manufacturing. Additive Manufacturing 21, 536--543.
 \url{https://doi.org/10.1016/j.addma.2018.04.011}
 
+\leavevmode\vadjust pre{\hypertarget{ref-imagej2023}{}}%
+ImageJ, 2023. Image processing and analysis in java {[}WWW Document{]}.
+URL \url{https://imagej.nih.gov/ij/download.html} (accessed 6.13.2023).
+
 \leavevmode\vadjust pre{\hypertarget{ref-jaisinghsheoran2020}{}}%
 Jaisingh Sheoran, A., Kumar, H., 2020. Fused {Deposition} modeling
 process parameters optimization and effect on mechanical properties and
@@ -1351,6 +1471,14 @@ Jones, R., Haufe, P., Sells, E., Iravani, P., Olliver, V., Palmer, C.,
 Bowyer, A., 2011. {RepRap} \textendash{} the replicating rapid
 prototyper. Robotica 29, 177--191.
 \url{https://doi.org/10.1017/S026357471000069X}
+
+\leavevmode\vadjust pre{\hypertarget{ref-kerdlap2022}{}}%
+Kerdlap, P., Purnama, A.R., Low, J.S.C., Tan, D.Z.L., Barlow, C.Y.,
+Ramakrishna, S., 2022. Comparing the environmental performance of
+distributed versus centralized plastic recycling systems: {Applying}
+hybrid simulation modeling to life cycle assessment. Journal of
+Industrial Ecology 26, 252--271.
+\url{https://doi.org/10.1111/jiec.13151}
 
 \leavevmode\vadjust pre{\hypertarget{ref-king2014}{}}%
 King, D., Babasola, A., Rozario, J., Pearce, J., 2014. Mobile
@@ -1387,6 +1515,13 @@ Manufacturing} from 3-{D Printing} of {Polymer Components} and
 {Products}. MRS Proceedings 1492, 85--90.
 \url{https://doi.org/10.1557/opl.2013.319}
 
+\leavevmode\vadjust pre{\hypertarget{ref-lei2009}{}}%
+Lei, Y., Wu, Q., Zhang, Q., 2009. Morphology and properties of
+microfibrillar composites based on recycled poly (ethylene
+terephthalate) and high density polyethylene. Composites Part A: Applied
+Science and Manufacturing 40, 904--912.
+\url{https://doi.org/10.1016/j.compositesa.2009.04.017}
+
 \leavevmode\vadjust pre{\hypertarget{ref-lipsky2019}{}}%
 Lipsky, S., Przyjemski, A., Velasquez, M., Gershenson, J., 2019. {3D
 Printing} for {Humanitarian Relief}: {The Printer Problem}, in: 2019
@@ -1408,6 +1543,13 @@ Wood} and {Recycled Plastics}. Digital Wood Design 24, 827--848.
 \leavevmode\vadjust pre{\hypertarget{ref-macarthur2017}{}}%
 MacArthur, E., 2017. Beyond plastic waste. Science 358, 843--843.
 \url{https://doi.org/10.1126/science.aao6749}
+
+\leavevmode\vadjust pre{\hypertarget{ref-mikula2021}{}}%
+Mikula, K., Skrzypczak, D., Izydorczyk, G., Warchoł, J., Moustakas, K.,
+Chojnacka, K., Witek-Krowiak, A., 2021. {3D} printing filament as a
+second life of waste plastics\textemdash a review. Environmental Science
+and Pollution Research 28, 12321--12333.
+\url{https://doi.org/10.1007/s11356-020-10657-8}
 
 \leavevmode\vadjust pre{\hypertarget{ref-mohammed2017}{}}%
 Mohammed, M.I., Das, A., Gomez-Kervin, E., Wilson, D., Gibson, I.,
@@ -1563,6 +1705,12 @@ customizability by breeding the means of production, in: Piller, F.T.,
 Tseng, M.M. (Eds.), Handbook of {Research} in {Mass Customization} and
 {Personalization}. {World Scientific}, pp. 568--580.
 
+\leavevmode\vadjust pre{\hypertarget{ref-selvam2020}{}}%
+Selvam, A., Mayilswamy, S., Whenish, R., 2020. Strength {Improvement} of
+{Additive Manufacturing Components} by {Reinforcing Carbon Fiber} and by
+{Employing Bioinspired Interlock Sutures}. Journal of Vinyl and Additive
+Technology 26, 511--523. \url{https://doi.org/10.1002/vnl.21766}
+
 \leavevmode\vadjust pre{\hypertarget{ref-shah2019}{}}%
 Shah, J., Snider, B., Clarke, T., Kozutsky, S., Lacki, M., Hosseini, A.,
 2019. Large-scale {3D} printers for additive manufacturing: Design
@@ -1576,6 +1724,12 @@ of {3D} printing process parameters to minimize surface roughness with
 hybrid artificial neural network model and particle swarm algorithm.
 Progress in Additive Manufacturing 6, 199--215.
 \url{https://doi.org/10.1007/s40964-021-00166-6}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Siltaloppi2021}{}}%
+Siltaloppi, J., Jähi, M., 2021. Toward a sustainable plastics value
+chain: {Core} conundrums and emerging solution mechanisms for a systemic
+transition. Journal of Cleaner Production 315, 128113.
+\url{https://doi.org/10.1016/j.jclepro.2021.128113}
 
 \leavevmode\vadjust pre{\hypertarget{ref-soares2021}{}}%
 Soares, J., Miguel, I., Venâncio, C., Lopes, I., Oliveira, M., 2021.
