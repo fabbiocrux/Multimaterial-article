@@ -48,23 +48,25 @@ geometry:
   - right=25mm
   - heightrounded
 
-bibliography: [assets/Catalina.bib, assets/References.bib]
+bibliography: [assets/References.bib, assets/Catalina.bib]
 csl: assets/RCR.csl
-#format: docx
-# format:
+     
+number-sections: true
+colorlinks: true
+link-citations: true
+linkcolor: Blue
+urlcolor: Blue
+citecolor: Blue
+
+format:
+  docx:
+    reference-doc: assets/Template.docx
 #   pdf:
 #     toc: false
 #     documentclass: article
-#     number-sections: true
-format:
   elsevier-pdf:
     cite-method: citeproc
     keep-tex: true
-    colorlinks: true
-    link-citations: true
-    linkcolor: Blue
-    urlcolor: Blue
-    citecolor: Blue
     journal:
       name: Journal Name
       formatting: review
@@ -368,7 +370,7 @@ DSC thermograms of recycled materials and blends
 table_2 <- read_excel("tables/tables.xlsx", sheet="Table2")
 table_2 %>% 
 kbl(booktabs = T) %>% kable_styling(latex_options = c("striped"),font_size = 7) %>% 
-    add_header_above(c(" " = 1, "Glass transition" = 1, "Melting" = 2, "Crystallization " = 2, "% Crystallinity" = 1))
+    add_header_above(c(" " = 1, "Glass transition" = 1, "Melting" = 2, "Crystallization " = 3, "% Crystallinity" = 1))
 
 
 ```
