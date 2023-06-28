@@ -76,26 +76,26 @@ citecolor: Blue
 format:
   # docx:
   #   reference-doc: assets/Template.docx
-  # pdf:
-  #   toc: false
-  #   documentclass: article
-  #   template-partials:
-  #     - title.tex
-  #   include-in-header:
-  #     text: |
-  #       \usepackage{lineno}
-  #       \usepackage[noblocks]{authblk}
-  #       \renewcommand*{\Authsep}{, }
-  #       \renewcommand*{\Authand}{, }
-  #       \renewcommand*{\Authands}{, }
-  #       \renewcommand\Affilfont{\small}
-  # 
-  elsevier-pdf:
-    cite-method: citeproc
-    keep-tex: true
-    journal:
-      name: Journal Name
-      formatting: review
+  pdf:
+    toc: false
+    documentclass: article
+    template-partials:
+      - title.tex
+    include-in-header:
+      text: |
+        \usepackage{lineno}
+        \usepackage[noblocks]{authblk}
+        \renewcommand*{\Authsep}{, }
+        \renewcommand*{\Authand}{, }
+        \renewcommand*{\Authands}{, }
+        \renewcommand\Affilfont{\small}
+# 
+#   elsevier-pdf:
+#     cite-method: citeproc
+#     keep-tex: true
+#     journal:
+#       name: Journal Name
+#       formatting: review
       
 filters:
    - latex-environment
@@ -326,9 +326,9 @@ table_1c
 #| echo: false
 
 library(knitr)
-kable(table_1a, booktabs = TRUE) %>% kable_styling(latex_options = c("striped"),font_size = 7)
-kable(table_1b, booktabs = TRUE) %>% kable_styling(latex_options = c("striped"),font_size = 7)
-kable(table_1c, booktabs = TRUE) %>% kable_styling(latex_options = c("striped"),font_size = 7) %>% column_spec(3, width = "4cm")
+kable(table_1a, booktabs = TRUE) %>% kable_styling(latex_options = c("striped"),font_size = 12)
+kable(table_1b, booktabs = TRUE) %>% kable_styling(latex_options = c("striped"),font_size = 11)
+kable(table_1c, booktabs = TRUE) %>% kable_styling(latex_options = c("striped"),font_size = 11) %>% column_spec(3, width = "4cm")
 ```
 ### Fused Granular Fabrication --FGF-
 
@@ -408,7 +408,7 @@ DSC thermograms of recycled materials and blends
 
 table_2 <- read_excel("tables/tables.xlsx", sheet="Table2")
 table_2 %>% 
-kbl(booktabs = T) %>% kable_styling(latex_options = c("striped"),font_size = 7) %>% 
+kbl(booktabs = T) %>% kable_styling(latex_options = c("striped"),font_size = 9) %>% 
     add_header_above(c(" " = 1, "Glass transition" = 1, "Melting" = 2, "Crystallization " = 3, "% Crystallinity" = 1))
 
 
@@ -478,7 +478,7 @@ Ideal printing parameters for fused granule fabrication of waste PET and HDPE bl
 
 table_3 <- read_excel("tables/tables.xlsx", sheet="Table3")
 table_3 %>% 
-kbl(booktabs = T) %>% kable_styling(latex_options = c("striped"),font_size = 7)
+kbl(booktabs = T) %>% kable_styling(latex_options = c("striped"),font_size = 10)
 ```
 
 ## Functional object print
