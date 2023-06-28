@@ -3,44 +3,59 @@ title: "Multi-material distributed recycling via Fused granular fabrication: rHD
 #subtitle: A Short Subtitle
 author:
   - name: Catalina Suescun Gonzalez
-    email: suescun@example.com
-    affiliations: 
-        - id: ERPI
-          name: Université de Lorraine
-          department: F-54000
-          address: Street Address
-          city: City
-          state: State
-          postal-code: 54000
-    attributes:
-        corresponding: true
-    #note: This is the first author footnote.
+    affil-id: 1
+    note: This is the first author footnote.
   - name: Hakim Boudaoud
-    affiliations:
-        - ref: ERPI
-#    note: |
+    affil-id: 1
   - name: Cécile Nouvel
-    affiliations:
-        - ref: ERPI
+    affil-id: 2
   - name: Fabio A. Cruz Sanchez
-    #email: derek@example.com
-    affilations:
-        - ref: ERPI
+    affil-id: 1
   - name: Joshua Pearce
-    affiliations:
-        - id: WU
-          name: Western University
-          department: Department of Electrical & Computer Engineering
-          address: Canada
-          city: London
-          state: ON
-          postal-code: 54000
+    affil-id: 3
+
+affiliations: 
+  - id: 1
+    name: Université de Lorraine – ERPI – F-54000, Nancy, France
+  - id: 2
+    name: Université de Lorraine –LGPI – F-54000, Nancy, France
+  - id: 3
+    name: Western University, Department of Electrical & Computer Engineering, Canada, London
+
+# author:
+#   - name: Catalina Suescun Gonzalez
+#     email: suescun@example.com
+#     affiliations: 
+#         - id: 1
+#           name: Université de Lorraine – ERPI – F-54000, Nancy, France
+#           department: F-54000
+#           address: Street Address
+#           city: City
+#           state: State
+#           postal-code: 54000
+#     attributes:
+#         corresponding: true
+#   - name: Hakim Boudaoud
+#     affiliations:
+#         - ref: 1
+#   - name: Cécile Nouvel
+#     affiliations: 
+#        - id: 2
+#          name: Université de Lorraine –LRPO – F-54000, Nancy, France
+#   - name: Fabio A. Cruz Sanchez
+#     affilations:
+#         - ref: 1
+#   - name: Joshua Pearce
+#     affiliations:
+#         - id: 3
+#           name: Western University, Department of Electrical & Computer Engineering, Canada, London
+
 abstract: |
   The high volume of plastic waste and the extremely low recycling rate has created a serious challenge worldwide. Local distributed recycling coupled to additive manufacturing (DRAM) offers a solution by economically incentivizing local recycling. A new DRAM technology capable of processing large quantities of plastic waste quickly is fused granular fabrication (FGF), where solid shredded plastic waste can be reused directly as 3D printing feedstock. This study presents an experimental assessment of multi-material recycling printability, using two of the most common thermoplastics in the beverage industry polyethylene terephthalate (PET) and high-density polyethylene (HDPE) and the feasibility of mixing PET and HDPE to be used as a feedstock material for large-scale 3-D printing. After the material collection, shredding, and cleaning its characterization, and optimization of parameters for 3D printing was performed. Results showed the feasibility of printing a large object from rPET/rHDPE flakes reducing the production cost up to 88%. .
 keywords: 
   - keyword1
   - keyword2
-
+linestretch: 1.5
 fontsize: 12pt
 geometry:
   - top=30mm
@@ -59,19 +74,29 @@ urlcolor: Blue
 citecolor: Blue
 
 format:
-  docx:
-    reference-doc: assets/Template.docx
-#   pdf:
-#     toc: false
-#     documentclass: article
+  # docx:
+  #   reference-doc: assets/Template.docx
+  # pdf:
+  #   toc: false
+  #   documentclass: article
+  #   template-partials:
+  #     - title.tex
+  #   include-in-header:
+  #     text: |
+  #       \usepackage{lineno}
+  #       \usepackage[noblocks]{authblk}
+  #       \renewcommand*{\Authsep}{, }
+  #       \renewcommand*{\Authand}{, }
+  #       \renewcommand*{\Authands}{, }
+  #       \renewcommand\Affilfont{\small}
+  # 
   elsevier-pdf:
     cite-method: citeproc
     keep-tex: true
     journal:
       name: Journal Name
       formatting: review
-    include-in-header:
-      text: '\usepackage{lineno} \usepackage{siunitx}'
+      
 filters:
    - latex-environment
 environments: [center, minipage]
@@ -138,7 +163,7 @@ Most DRAM studies have been using mono-material for the fabrication of feedstock
 There are, however, several examples of mixed materials including wood waste and recycled plastic [@pringle2018; @loschke2019] and textile fibers and recycled plastic [@carrete2021].
 Recently, @Zander2019 reported the manufacturing of composite filament from recycled PET/PP and PS/PP blending through compatibilizer copolymer such as SEBS.
 Their results revealed the technical printability of polypropylene blend composite filaments from a thermo-mechanical characterization perspective.
-Increasing the performance window of blending materials by compatibilization which could be a relevant path for recycling plastics in a local level and isolated areas contexts (e.g. during humanitarian crises [@savonen2018, @corsini2022,@lipsky2019], supply chain disruptions [@novak2020,@choong2020, @salmi2020, @attaran2020] and/or isolated off-grid situations using solar-powered 3-D printers [@king2014,@gwamuri2016, @wong2015, @Mohammed2018]).
+Increasing the performance window of blending materials by compatibilization which could be a relevant path for recycling plastics in a local level and isolated areas contexts (e.g. during humanitarian crises [@savonen2018 ; @corsini2022 ; @lipsky2019], supply chain disruptions [@novak2020; @choong2020 ; @salmi2020 ; @attaran2020] and/or isolated off-grid situations using solar-powered 3-D printers [@king2014; @gwamuri2016 ; @wong2015;  @Mohammed2018]).
 Likewise, @vaucher2022 studied the evaluation of the microstructure, mechanical performance, and printing quality of filaments made from rPET and rHDPE varying the wt% of HDPE material from 0 to 10%.
 They confirmed the increase in the Young's modulus from 1.7 GPa of the pure PET to 2.1 GPa for all the HDPE concentrations.
 Additionally, the maximum stress of the bends were augmented with high HDPE concentrations.
@@ -265,12 +290,15 @@ Finally, the PSO tuning parameters were found in the previous PSO work [@oberloi
 
 ```{r, include=FALSE}
 library(knitr)
-table_1a <- read_excel("tables/tables.xlsx", sheet="Table1.a")
-table_1b <- read_excel("tables/tables.xlsx", sheet="Table1.b")
-table_1c <- read_excel("tables/tables.xlsx", sheet="Table1.c")
+
+table_1a <- read_excel("tables/tables.xlsx", sheet="Table1.a") #%>% kable(booktabs = T) %>% kable_styling(latex_options = c("striped"),font_size = 7)
+
+table_1b <- read_excel("tables/tables.xlsx", sheet="Table1.b") #%>% kable(booktabs = T) #%>%  kable_styling(latex_options = c("striped"), font_size = 7, full_width = F)
+
+table_1c <- read_excel("tables/tables.xlsx", sheet="Table1.c") #%>% kable(booktabs = T)# %>%  kable_styling(latex_options = c("striped"), font_size = 7, full_width = F) %>% column_spec(3, width = "4cm")
 ```
 
-```{r}
+```{r, include=FALSE}
 #| label: table1
 #| tbl-cap: "Example"
 #| tbl-subcap: 
@@ -279,18 +307,29 @@ table_1c <- read_excel("tables/tables.xlsx", sheet="Table1.c")
 #|   - "Recommended parameters for PSO tuning "
 #| layout: "[[1 ], [0.5, -0.05, 0.45]]" 
 #| echo: false
-
-
-table_1a %>% 
-kbl(booktabs = T) %>% kable_styling(latex_options = c("striped"),font_size = 7)
-table_1b %>% 
-   kbl(booktabs = T) %>%  kable_styling(latex_options = c("striped"), font_size = 7, full_width = F)
-table_1c %>% 
-   kbl(booktabs = T) %>%  kable_styling(latex_options = c("striped"), font_size = 7, full_width = F) %>% 
-   column_spec(3, width = "4cm")
+library(knitr)
+table_1a 
+table_1b 
+table_1c 
 
 ```
 
+
+```{r}
+#| label: tbl-table1
+#| tbl-cap: "table 1"
+#| tbl-subcap: 
+#|   - "Line optimization initial parameters"
+#|   - "Fixed parameters to perform printing parameters optimization based on PSO"
+#|   - "Recommended parameters for PSO tuning "
+#| layout: "[[1 ], [0.5, -0.05, 0.45]]" 
+#| echo: false
+
+library(knitr)
+kable(table_1a, booktabs = TRUE) %>% kable_styling(latex_options = c("striped"),font_size = 7)
+kable(table_1b, booktabs = TRUE) %>% kable_styling(latex_options = c("striped"),font_size = 7)
+kable(table_1c, booktabs = TRUE) %>% kable_styling(latex_options = c("striped"),font_size = 7) %>% column_spec(3, width = "4cm")
+```
 ### Fused Granular Fabrication --FGF-
 
 To print the raw material obtained, a 3-heat-zone modified open-source printer (Gigabot XL re:3D, Houston, TX, USA) was used.
