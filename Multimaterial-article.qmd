@@ -18,7 +18,7 @@ affiliations:
   - id: 1
     name: Université de Lorraine – ERPI – F-54000, Nancy, France
   - id: 2
-    name: Université de Lorraine –LGPI – F-54000, Nancy, France
+    name: Université de Lorraine – LRGP – F-54000, Nancy, France
   - id: 3
     name: Western University, Department of Electrical & Computer Engineering, Canada, London
 
@@ -51,7 +51,7 @@ affiliations:
 #           name: Western University, Department of Electrical & Computer Engineering, Canada, London
 
 abstract: |
-  The high volume of plastic waste and the extremely low recycling rate has created a serious challenge worldwide. Local distributed recycling coupled to additive manufacturing (DRAM) offers a solution by economically incentivizing local recycling. A new DRAM technology capable of processing large quantities of plastic waste quickly is fused granular fabrication (FGF), where solid shredded plastic waste can be reused directly as 3D printing feedstock. This study presents an experimental assessment of multi-material recycling printability, using two of the most common thermoplastics in the beverage industry polyethylene terephthalate (PET) and high-density polyethylene (HDPE) and the feasibility of mixing PET and HDPE to be used as a feedstock material for large-scale 3-D printing. After the material collection, shredding, and cleaning its characterization, and optimization of parameters for 3D printing was performed. Results showed the feasibility of printing a large object from rPET/rHDPE flakes reducing the production cost up to 88%. .
+ \doublespacing The high volume of plastic waste and the extremely low recycling rate has created a serious challenge worldwide. Local distributed recycling coupled to additive manufacturing (DRAM) offers a solution by economically incentivizing local recycling. A new DRAM technology capable of processing large quantities of plastic waste quickly is fused granular fabrication (FGF), where solid shredded plastic waste can be reused directly as 3D printing feedstock. This study presents an experimental assessment of multi-material recycling printability, using two of the most common thermoplastics in the beverage industry polyethylene terephthalate (PET) and high-density polyethylene (HDPE) and the feasibility of mixing PET and HDPE to be used as a feedstock material for large-scale 3-D printing. After the material collection, shredding, and cleaning its characterization, and optimization of parameters for 3D printing was performed. Results showed the feasibility of printing a large object from rPET/rHDPE flakes reducing the production cost up to 88%. .
 keywords: 
   - keyword1
   - keyword2
@@ -82,13 +82,13 @@ format:
     template-partials:
       - title.tex
     include-in-header:
-      text: |
-        \usepackage{lineno}
-        \usepackage[noblocks]{authblk}
-        \renewcommand*{\Authsep}{, }
-        \renewcommand*{\Authand}{, }
-        \renewcommand*{\Authands}{, }
-        \renewcommand\Affilfont{\small}
+      - text: |
+          \usepackage{lineno}
+          \usepackage[noblocks]{authblk}
+          \renewcommand*{\Authsep}{, }
+          \renewcommand*{\Authand}{, }
+          \renewcommand*{\Authands}{, }
+          \renewcommand\Affilfont{\small}
 # 
 #   elsevier-pdf:
 #     cite-method: citeproc
@@ -103,7 +103,9 @@ environments: [center, minipage]
 prefer-html: true
 ---
 
-<!-- \linenumbers -->
+
+
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(
@@ -128,10 +130,22 @@ URL = c('https://raw.githubusercontent.com/fabbiocrux/Figures/main/')
 
 ```
 
-\newpage
+\setstretch{1}
+\section*{Acronyms}
 
+```{r}
+read_excel("tables/tables.xlsx", sheet="Acronyms") %>%
+   arrange(Acronym) %>% 
+   kable(booktabs = T, linesep = "") %>% 
+   kable_styling(font_size = 10, full_width = F, position = "left") %>% 
+   column_spec(1, bold = T, color = "black")
+```
+
+
+\setstretch{1.5}
 # Introduction
 
+\linenumbers
 The disposal of plastic waste is one of the most challenging current environmental concerns given its systemic complexity [@evode2021].
 The mass of micro- / meso- plastics in the oceans are expected to exceed the mass of the global stock of fish by 2050 [@macarthur2017].
 More critically, the global plastic annual production is expected to reach 1100 metric tons by the same year [@geyer2020].
@@ -171,7 +185,7 @@ Values were lower than virgin PET filament, yet similar to commercial recycle on
 The addition of rHDPE at higher levels, however, helped to meet the brittle-ductile transition in 15% despite the low interfacial tension of both polymers, allowing the printing of quality parts.
 
 While former studies have proven been successful in FFF, a new approach to DRAM is fused granular fabrication (FGF) or fused particle fabrication (FPF), where the material-extrusion AM systems print directly from pellets, granules, flakes, shred or grinder material [@fontana2022; @woern2018].
-In the context of recycling, this could reduce the number of melt/extrusion cycles that degrade the material needed in the filament fabrication process [@cruzsanchez2017a].
+In the context of recycling, this could reduce the number of melt/extrusion cycles that degrade the material needed in the filament fabrication process [@cruzsanchez2017].
 The FGF technique opens up the potential of use recycle materials as well as print large-scale objects either with a conventional cartesian 3-D printer [@woern2018], delta 3-D printer [@grassi2019] or hangprinter [@petsiuk2022, @rattan2023].
 Research groups corroborate that plastic waste can be used as feedstock materials for FGF/FPF.
 @alexandre2020 assessed the technical and economical dimensions of virgin and shredded PLA printed in a self-modified FGF machine and compared with FFF.
@@ -182,7 +196,7 @@ Few researchers, however, have addressed the problem of the direct printing of r
 
 This study explores the potential of direct 3-D printing two immiscible polymers commonly used in the beverage sector through a distributed recycling process for its easily implementation operation at the local level.
 To demonstrate the feasibility of the process, the bottled water plastic most used in France of roughly 90% of PET (body of the bottle) and 10% of HDPE (cap) now called *rPET90//rHDPE10*, is used as a test material.
-The experimental process of collection, characterization, and printing of the recycled material is described and the results are discussed in the context of widespread DRAM adoption at the community level.
+The experimental process of collection, characterization, and printing of the recycled material is described and the results are discussed in the context of widespread DRAM adoption at the community-based level.
 
 # Materials and Methods
 
@@ -190,30 +204,28 @@ The methodology presented in @fig-1 outlines the approach adopted to develop the
 The four stages *Material*, *Material preparation*, *Printing process* and *Evaluation* were thoroughly studied in order to control the major processes steps and the technical characterization methods.
 In the following subsections, each step is explained.
 
-![Global framework of the study](figures/Methodology.png){#fig-1 width="90%"}
+![Global framework of the study](figures/Fig_1_framework.png){#fig-1 width="90%"}
 
 ## Raw material obtention
 
-The goal of material stage is the collection of post-consumer plastic source.
-In this study, water of bottles coming from the French brand Cristaline was used as a feedstock.
-A framework of the process used is shown in Fig.
-1.a.
+The goal of material stage is the collection and preparation of post-consumer plastic source. 
+In this study, bottles of water  coming from the French brand Cristaline was used as a feedstock. 
+The process steps used are shown in @fig-fig1 a/b.
 Post-consumer bottles were collected by receptacles placed in partnership schools in Lorraine, France.
-To convert the complete water bottles with its cap into 3DP feedstock material, the labels were removed before shredding in a cutting mill Retsch MS300 using a 3 mm grid.
-After shredding, the obtained flakes were sifted with a 3 mm sifter.
-Next, they were cleaned with hot water in an ultrasonic machine at 60°C for 1h to remove contaminants.
+To convert the complete water bottles with its cap into 3DP feedstock material, the labels were removed before shredding in a cutting mill Retsch MS300 using a 3 $mm$ grid.
+After shredding, the obtained flakes were sifted with a 1.5 $mm$, 3 $mm$, 5 $mm$ sifters for further analysis. 
+Next, flakes  were cleaned with hot water in an ultrasonic machine at 60°C for 1h to remove contaminants.
 Lastly, they were dried in a conventional oven overnight at 80°C [@vandevoorde2022; @taghavi2018] to avoid degradation of the material.
 Washing conditions were the same for all the samples, therefore, the effect of contaminants was not considered.
-The resultant material is shown in Fig.
-1.b.
+The resultant material is shown in Fig 2.c.
 
-![figure1](figures/Figure-1.png)
+![Process steps to prepare the collected material](figures/Fig_2.png){#fig-fig1}
 
 The material composition was calculated as a function of the mass of the bottles and caps separately.
-The percent (%) of bottle-cap was found to be \~90%rPET and \~10% rHDPE.
+The percent (%) of bottle-cap was found to be \~90%rPET (bottle) and \~10% rHDPE (cap).
 The complete bottle was shredded without separation of both materials thus this percentage is constant for all the samples.
 
-## Material preparation
+## Material preparation and characterization
 
 ### Material particle size analysis -Granulometry-
 
@@ -224,14 +236,14 @@ The size characteristics of the particles were evaluated between four different 
 
 FTIR spectroscopy was carried out to determine the nature of the bottle and determine if there were impurities, plasticizers or additives that could be detected.
 The analysis were made on samples of rPET and rHDPE separately and then a printed sample of both materials to determine if there was possible to observe a chemical bonding.
-Every sample was measured in two different points, three times in each point then curves were normalized and analyzed with the Origin Pro 8 [@https://www.originlab.com/origin].
+Every sample was measured in two different points, three times in each point then curves were normalized and analyzed with the Origin Pro 8.
 The Fourier transform infrared spectra have been recorded in the range of $4000~cm^{-1}$ to $375~cm^{-1}$ with resolution $4~cm^{-1}$ using Bruker IFS 66V spectrophotometer.
 
 ### Differential scanning calorimetry --DSC-
 
 Differential scanning calorimetry analysis were performed with a DSC-1 Mettler Toledo with STARe software operating under nitrogen atmosphere at heating rate and cooling rate of $10~°C/min$.
 rPET, rHDPE and rPET90//rHDPE10 samples were investigated using three cycles: first heating from 20°C to 270 °C, cooling to 20 °C and reheating to 270°C.
-The rHDPE sample was analyzed following similar cycles but with the maximum temperature set at 250°C and pBC with temperatures from -20 to 270°C.
+The rHDPE sample was analyzed following similar cycles but with the maximum temperature set at 250°C and the blend with temperatures from -20 to 270°C.
 Glass transition temperature (Tg) of rPET was determined during the first heating cycle, while rPET90//rHDPE10 (Tg) during the second heating cycle along with the melting point of all materials.
 Crystallization temperature (Tc) of the each of the materials was determined during the cooling cycle.
 The degree of crystallinity (Xc) was calculated from the second cycle for recycled materials and first cycle for the blend as expressed in equation (1) [@taghavi2018; @pan2020]:
@@ -257,7 +269,7 @@ Finally, density was calculated as expressed in @eq-density.
 To ensure the accuracy the test was performed twice and the average value was reported in $g/cm^{3}$.
 
 $$
-\rho = V/m    
+\rho = V/m    \qquad \left[ \frac{g}{cm^{3}} \right]
 $$ {#eq-density}
 
 Where, $\rho$ is the density, $V$ is the volume, and $m$ the mass.
@@ -265,7 +277,7 @@ Where, $\rho$ is the density, $V$ is the volume, and $m$ the mass.
 Afterwards, experimental results were compared with the theoretical blend density which could be calculated by [@eq-density_theory; @mishra1989].
 
 $$
-\rho_{12}= \frac{1}{\frac{W_{1}}{\rho_{2}} + \frac{W_{2}}{\rho_{2}}}                                               
+\rho_{12}= \frac{1}{\frac{W_{1}}{\rho_{2}} + \frac{W_{2}}{\rho_{2}}} \qquad \left[ \frac{g}{cm^{3}} \right]                                               
 $$ {#eq-density_theory}
 
 Where, $\rho_{12}$ is the density of the blend, $W_{1}$ and $W_{2}$, the weight fractions of each polymer, $\rho_{1}$ and $\rho_{2}$, the theoretical density of each polymer for PET ($~1.38~g/cm^{3}$) and HDPE 0.93 to 0.97 $g/cm^{3}$ [@jonathanguidigo12017].
@@ -279,13 +291,12 @@ According to @oberloier2022, particle swarm optimization (PSO) is an effective a
 The optimization of the 3-D printing parameters for the rPET90//rHDPE10 material in the GigabotX was performed using the open-source PSO Experimenter platform (available in Linux), following the methodology developed by @oberloier2022.
 Three process benchmark artifacts were printed; line, plane, and cube.
 They were modeled in CAD software Onshape CAD v1.150 and sliced using Prusaslicer v2.52.0.
-The geometry models and dimensions are shown in Fig.
-2.
+@fig-cad presents the geometry models and dimensions.
 
-![Dimensions and CAD models of the geometries used for parameters optimization.](figures/Figure-2.png)
+![Dimensions and CAD models of the geometries used for parameters optimization.](figures/Figure-2.png){#fig-cad}
 
 Four parameters were assessed: 1) the nozle temperature, 2) bed temperature, 3) the printing speed and 4) extrusion multiplier [@oberloier2022a].
-The initial parameters for the line are presented in @tbl-table1 while other parameters were obtained in preliminary experimental work shown in Table 1.b.
+The initial parameters for the line are presented in Table 1a while other parameters were obtained in preliminary experimental work shown in Table 1.b.
 Finally, the PSO tuning parameters were found in the previous PSO work [@oberloier2022] Table 1.c.
 
 ```{r, include=FALSE}
@@ -299,7 +310,7 @@ table_1c <- read_excel("tables/tables.xlsx", sheet="Table1.c") #%>% kable(bookta
 ```
 
 ```{r, include=FALSE}
-#| label: table1
+#| label: tbl-pso
 #| tbl-cap: "Example"
 #| tbl-subcap: 
 #|   - "Line optimization initial parameters"
@@ -332,10 +343,13 @@ kable(table_1c, booktabs = TRUE) %>% kable_styling(latex_options = c("striped"),
 ```
 ### Fused Granular Fabrication --FGF-
 
-To print the raw material obtained, a 3-heat-zone modified open-source printer (Gigabot XL re:3D, Houston, TX, USA) was used.
+To print the raw material obtained, a 3-heat-zone modified open-source printer (Gigabot XL re:3D, Houston, TX, USA) was used as illustrated in @fig-gigabot.
 The machine is a single screw extrusion-based 3-D printer capable of direct printing pellets, flakes or granules, with a nozzle size of $1.75~mm$.
 For this study, a chair was printed to evaluate the ability for the material to 3-D print and the machine capacity to print large-objects such as a piece of furniture.
 The ideal parameters found for the cube geometry were used to print the final part.
+
+
+![Fused granular fabrication printer Gigabot ](figures/Figure_4_Giga.png){#fig-gigabot}
 
 # Results and discussion
 
@@ -351,22 +365,30 @@ Previous studies demonstrated that particles with areas smaller than $22~mm^{2}$
 From the experiments conducted, however, particles with areas above $10~mm^{2}$ clogged in the feeding system and auger screw of the machine.
 Therefore, granulometry analysis was performed using three different mesh sizes.
 
+::: {layout="[57,-3, 40]"}
+
+![Granulometry analysis](figures/Figure_5_granulometry.png){#fig-granulometry}
+
+![Gigabot feeding system](figures/Figure_6_crammer.png){#fig-crammer}
+:::
+
 @fig-granulometry shows the results obtained, where particles sifted at $5~mm$ had an average area similar to the reference.
 There are, however, particles with areas over $9~mm^{2}$ which blocked in the feeding and extrusion section.
 Particles sifted to $1.5~mm$ showed a distribution with areas from 0 to proximately $3~mm^{2}$, this area was considered too low for printing.
 Small particles can completely melt in the first heat zone obstructing the consistent flow of other particles and not allowing the pressure needed to extrude the melted particles lower in the screw.
 Although flakes of 3 mm show a more dispersed distribution and slightly lower area compared with the reference, those particles were found to be optimal for printing.
+
 The final objects, however, still displayed under-extrusion issues.
-For this reason, a crammer was implemented [@little2020]; which physically pushes particles to the auger to convey them from feeding tube into the extruder.
+For this reason, a crammer was implemented [@little2020] as presented in @fig-crammer;
+which physically pushes particles to the auger to convey them from feeding tube into the extruder.
 After the crammer implementation under-extrusion issues were significatively decreased.
 It was concluded that flakes with areas between $1.5~mm^{2}$ to $10~mm^{2}$ were optimum for print using a crammer able to aid the feeding system.
 
-![Granulometry analysis](figures/Figure-3.png){#fig-granulometry}
-
-## Chemical analysis from FTIR
+### Chemical analysis from FTIR
 
 Chemical structure information of the materials was obtained using FTIR spectroscopy, which provided analysis of the characteristic spectral bands of the polymers.
-First, for the rPET (bottle) four characteristic bands can be observed Fig 4, one in $1713 cm^{-1}$ representing the $C=O$ double bond, the $C-O$ single bond ester at $1240 cm^{-1}$, $1093 cm^{-1}$ band corresponding to the methylene group and vibrations of the ester bond and finally, a band $722 cm^{-1}$ the CH2 rocking bending vibration.
+
+First, for the rPET (bottle) four characteristic bands can be observed  @fig-FTIR, one in $1713 cm^{-1}$ representing the $C=O$ double bond, the $C-O$ single bond ester at $1240 cm^{-1}$, $1093 cm^{-1}$ band corresponding to the methylene group and vibrations of the ester bond and finally, a band $722 cm^{-1}$ the CH2 rocking bending vibration.
 
 Similar results were obtained in the literature for PET coming from recycled water bottles, soda bottles and food containers [@zander2018].
 For rHDPE (caps), four characteristic peaks were observed, the bond of C-H functional group in peaks $2915cm^{-1}$ and $2847~cm^{-1}$, main bending mode of the -CH2 in $1465~cm^{-1}$ and CH2 rocking bending vibration at $729 ~cm^{-1}$.
@@ -376,9 +398,9 @@ The spectrum of the printed blend (rPET90//rHDPE10) had the same characteristic 
 There are, however, observable differences between $1000 ~cm^{-1}$ and $720 ~cm^{-1}$ and in the bond of C-H ($2915~cm^{-1}$ and $2847 ~cm^{-1}$ peaks), confirming the presence of HDPE (cap).
 The shifting observed can be attributed to the hydrogen interactions between both materials.
 
-![FTIR spectra of rPET, rHDPE and their blend](figures/Figure_4.png)
+![FTIR spectra of rPET, rHDPE and their blend](figures/Figure_7_FTIR.png){#fig-FTIR width=90%}
 
-## Thermal analysis DSC
+### Thermal analysis DSC
 
 The thermal properties of both recycled materials and their blend were characterized via DSC to have a starting point for the 3-D printing process parameter optimization.
 
@@ -395,9 +417,9 @@ It is likely the addition of the rHDPE acted as germination point for crystalliz
 The slight changes in the rPET temperatures of fusion-crystallization and degree of crystallinity showed the interaction of both polymers.
 
 ::: {#fig-DCS layout-nrow="2"}
-![Heating curves](figures/Figure_5a.png){#fig-DCSa}
+![Heating curves](figures/Figure_8a_DSC.png){#fig-DCSa width=75%}
 
-![Cooling curve](figures/Figure_5b.png){#fig-DCSb}
+![Cooling curve](figures/Figure_8b_DSC.png){#fig-DCSb width=75%}
 
 DSC thermograms of recycled materials and blends
 :::
@@ -408,22 +430,22 @@ DSC thermograms of recycled materials and blends
 
 table_2 <- read_excel("tables/tables.xlsx", sheet="Table2")
 table_2 %>% 
-kbl(booktabs = T) %>% kable_styling(latex_options = c("striped"),font_size = 9) %>% 
+kbl(booktabs = T) %>% kable_styling(latex_options = c("striped"),font_size = 8) %>% 
     add_header_above(c(" " = 1, "Glass transition" = 1, "Melting" = 2, "Crystallization " = 3, "% Crystallinity" = 1))
 
 
 ```
 
-## Rheology MFI
+### Rheology MFI
 
 The melt flow index of the flakes was determined, enabling a fast and practical screening of the viscosity of the material.
 Following the DSC results, the initial temperature to start the MFI test was 250°C, however the material did not flow reliably so the temperature was increased by 5°C to enable the melt flow index of the rPET90//rHDPE10 to be determined.
 A temperature of 260°C was also tested, however, the material flowed rapidly and the measurement could not be reliably obtained.
-MFI tests were performed three times and the results of the rPET90//rHDPE10 was a medium MFI 39.4± 2.4 g/10min, which is roughly consistent with values found in literature for rPET [@bustosseibert2022; @nofar2019; @Salminen].
+MFI tests were performed three times and the results of the rPET90//rHDPE10 was a medium MFI 39.4± 2.4 g/10min, which is roughly consistent with values found in literature for rPET [@bustosseibert2022; @nofar2019; @Langer2020].
 This result suggests that the low percentage addition of HDPE do not highly impact the MFI value of rPET.
 As the material flowed at temperature of 255°C in the MFI, it provided the input temperature for 3-D printer parameters optimization.
 
-## Density
+### Density
 
 The density allows the estimation of cost, material use, time consumed and weight of the printing object in the slicer.
 This information is useful to find the accurate printing parameters with the PSO experimenter as fitness is calculated as a function of the dimensional accuracy and weight of the printed object.
@@ -440,7 +462,10 @@ Geometries were 3-D printed changing the parameters as expressed in the PSO Expe
 The fitness function is defined by the weighted sum of the dimensional measurements (length, width, height, and weight) of the printed object, where fitness below 0.1 was set as a desirable threshold.
 In the software five particles were established for one iteration, thus in one iteration five different parameters combinations were printed.
 The first geometry (line) was able to reach a fitness of \< 0.1 after six iterations for a total of thirty lines printed.
-The ideal parameters for this geometry are listed in column two of Table 3.
+The ideal parameters for this geometry are listed in column two of Table @tbl-table3 and images of the resulting geometries are illustrated in @fig-geometries .
+
+
+![Images of the resulting geometries a) line, b) plane, c) cube ](figures/Figure_9_geometries.png){#fig-geometries}
 
 Afterwards, these parameters were used as initial guess for plane geometry, which reached the desired fitness in the first iteration.
 Likewise, cubes were printed using the plane ideal parameter as initial guess and optimal parameters, where found in the first iteration.
@@ -473,7 +498,7 @@ Table 3.
 Ideal printing parameters for fused granule fabrication of waste PET and HDPE blend made from shredded whole plastic water bottles.
 
 ```{r}
-#| label: table3
+#| label: tbl-table3
 #| tbl-cap: "Ideal printing parameters for fused granule fabrication of waste PET and HDPE blend made from shredded whole plastic water bottles"
 
 table_3 <- read_excel("tables/tables.xlsx", sheet="Table3")
@@ -496,7 +521,7 @@ Indeed, delamination presented in the printing of a larger object can be attribu
 This can even be an issue for more popular 3-D printing materials like PLA from the print surface [@wijnen2018].
 The addition of agents that reduce the interphase tension between polymers might help to solve the delamination present and enhance the properties of the material [@kramer1994; @dai1997; @inoya2012] as interfacial bond can be enhanced by polymer modification [@gao2021] and viscosity decrement [@ko2019].
 Additionally, while printing warping problems were observed, (Fig. 6.c) which are likely caused by the high crystallization rates of HDPE [@schirmeister2019] suggesting that the incorporation of this plastic even in a low portions have affected the printing negatively.
-The use of Magigoo [@https://magigoo.com/] and the addition of a brim was tested in order to enable bed adhesion, yet this solutions did not completely solve the problem.
+The use of Magigoo adhesive (Thougth3D Ltd., Paola, Malta) and the addition of a brim was tested in order to enable bed adhesion, yet this solutions did not completely solve the problem.
 A previous study showed that the use of a building plate made of thermoplastic elastomer SEBS allowed the adhesion of the plastic and enables facile detachments of the printing object without breaking or damaging [@schirmeister2019], suggesting a solution that needs further evaluation in future work.
 Another visible issue present in the close angles of the printed object was the shrinkage (Fig. 6.d) which occurs during solidification and especially upon polymer crystallization.
 Moreover, as is well-know, PET has hygroscopic tendencies and easily absorbs atmosphere moisture making it difficult to extrude [@bustosseibert2022 ] thus is likely to break down in the presence of water, lowering the quality of the print.
@@ -511,7 +536,7 @@ The printing time took 10 h and the printed object has a mass of 840 g.
 Due to the found optimized speed being low, the printing rate ( grams per hour) is low considering the machine that pellet printers have a typical throughput of 220 g to 9 kg per hour.
 The printing time could be improved by upgrading the extruder motor to a more powerful one.
 Besides, the energy required for 10 hr of 3-D printing was found to be 6 kW-hr resulting in a production cost of \~1.2 € in function of the electricity cost in France, without considering the material cost as bottles were obtained from post-consumers waste.
-When labor costs are not included the price was significative reduced (\~88%) compared with those low cost found in the market \[\@ https://www.ikea.com/fr/fr/p/mammut-tabouret-enfant-interieur-exterieur-jaune-20382324\].
+When labor costs are not included the price was significative reduced (\~88%) compared with those low cost found in the market.
 
 The economics of fabricating the case study product remained competitive even if recycled plastic pellets or shreds are used, which can be found on the market from 1-10 €/kg.
 However, labor, maintenance and machine devaluation were not considered in the final price and are needed in future work for a complete economic evaluation.
@@ -540,9 +565,14 @@ The authors declare that they have no known competing financial interest or pers
 Acknowledgements
 
 # Acknowledgements {.unnumbered}
-The authors thank the LUE program for the financing of the thesis, the LF2L platform, INEDIT European project and the Thompson endowment.
-References
+
+This project has received funding from the European Union’s Horizon 2020 research and innovation programme under the grant agreement No 869952.
+The authors thank the LUE program for the financing of the thesis, the Lorraine Fab Living lab platform and the Thompson endowment.
+
 
 \newpage
 
+
+
 # References {.unnumbered}
+\setstretch{1.1}
