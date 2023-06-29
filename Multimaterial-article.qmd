@@ -1,56 +1,39 @@
 ---
 title: "Multi-material distributed recycling via Fused granular fabrication: rHDPE and rPET case of study"
-#subtitle: A Short Subtitle
+format:
+  pdf:
+    documentclass: article 
+    toc: false
+    template-partials:
+      - title.tex
+    include-in-header:
+      - text: |
+          \usepackage{lineno}
+          \usepackage[noblocks]{authblk}
+          \renewcommand*{\Authsep}{, }
+          \renewcommand*{\Authand}{, }
+          \renewcommand*{\Authands}{, }
+          \renewcommand\Affilfont{\small}
+          \usepackage{setspace}
 author:
   - name: Catalina Suescun Gonzalez
     affil-id: 1
-    note: This is the first author footnote.
+    note: Corresponding author
+  - name: Fabio A. Cruz Sanchez
+    affil-id: 1    
   - name: Hakim Boudaoud
     affil-id: 1
   - name: Cécile Nouvel
     affil-id: 2
-  - name: Fabio A. Cruz Sanchez
-    affil-id: 1
   - name: Joshua Pearce
     affil-id: 3
-
 affiliations: 
   - id: 1
-    name: Université de Lorraine – ERPI – F-54000, Nancy, France
+    name: "Université de Lorraine – ERPI – F-54000, Nancy, France"
   - id: 2
-    name: Université de Lorraine – LRGP – F-54000, Nancy, France
+    name: "Université de Lorraine – LRGP – F-54000, Nancy, France"
   - id: 3
-    name: Western University, Department of Electrical & Computer Engineering, Canada, London
-
-
-# author:
-#   - name: Catalina Suescun Gonzalez
-#     email: suescun@example.com
-#     affiliations: 
-#         - id: 1
-#           name: Université de Lorraine – ERPI – F-54000, Nancy, France
-#           department: F-54000
-#           address: Street Address
-#           city: City
-#           state: State
-#           postal-code: 54000
-#     attributes:
-#         corresponding: true
-#   - name: Hakim Boudaoud
-#     affiliations:
-#         - ref: 1
-#   - name: Cécile Nouvel
-#     affiliations: 
-#        - id: 2
-#          name: Université de Lorraine –LRPO – F-54000, Nancy, France
-#   - name: Fabio A. Cruz Sanchez
-#     affilations:
-#         - ref: 1
-#   - name: Joshua Pearce
-#     affiliations:
-#         - id: 3
-#           name: Western University, Department of Electrical & Computer Engineering, Canada, London
-
+    name: "Western University, Department of Electrical & Computer Engineering, Canada, London"
 abstract: |
  \doublespacing The high volume of plastic waste and the extremely low recycling rate has created a serious challenge worldwide. Local distributed recycling coupled to additive manufacturing (DRAM) offers a solution by economically incentivizing local recycling. A new DRAM technology capable of processing large quantities of plastic waste quickly is fused granular fabrication (FGF), where solid shredded plastic waste can be reused directly as 3D printing feedstock. This study presents an experimental assessment of multi-material recycling printability, using two of the most common thermoplastics in the beverage industry polyethylene terephthalate (PET) and high-density polyethylene (HDPE) and the feasibility of mixing PET and HDPE to be used as a feedstock material for large-scale 3-D printing. After the material collection, shredding, and cleaning its characterization, and optimization of parameters for 3D printing was performed. Results showed the feasibility of printing a large object from rPET/rHDPE flakes reducing the production cost up to 88%. .
 keywords: 
@@ -63,49 +46,16 @@ geometry:
   - left=25mm
   - right=25mm
   - heightrounded
-
 bibliography: [assets/References.bib, assets/Catalina.bib]
 csl: assets/RCR.csl
-     
 number-sections: true
 colorlinks: true
 link-citations: true
 linkcolor: Blue
 urlcolor: Blue
 citecolor: Blue
-
-format:
-  # docx:
-  #   reference-doc: assets/Template.docx
-  pdf:
-    toc: false
-    documentclass: article
-    template-partials:
-      - title.tex
-    include-in-header:
-      - text: |
-          \usepackage{lineno}
-          \usepackage[noblocks]{authblk}
-          \renewcommand*{\Authsep}{, }
-          \renewcommand*{\Authand}{, }
-          \renewcommand*{\Authands}{, }
-          \renewcommand\Affilfont{\small}
-# 
-#   elsevier-pdf:
-#     cite-method: citeproc
-#     keep-tex: true
-#     journal:
-#       name: Journal Name
-#       formatting: review
-      
-filters:
-   - latex-environment
-environments: [center, minipage]
 prefer-html: true
 ---
-
-
-
 
 
 ```{r setup, include=FALSE}
@@ -171,7 +121,7 @@ This is due to its simplicity, versatility, low-cost, and ability in the constru
 Indeed, the open-source 3-D approach for 3-D printers has enabled the technology to evolve in a radical manner for manufacturing and prototyping adding value to the recycled material [@cruzsanchez2020].
 There are large efforts to find sustainable feedstocks for 3-D printing [@rett2021, @Pakkanen2017].
 Several studies in the literature have increase the spectrum of recycled filament materials such as PLA [@cruzsanchez2017; @anderson2017], ABS [@mohammed2017a; @mohammed2017], PET [@zander2018; @vaucher2022], HDPE [@chong2017; @mohammed2017a; @baechler2013] PC [@gaikwad2018].
-In fact, using a comparative life cycle assessment in a low density population case study of Michigan, USA, @Kreiger2014 argued that about of 100 billion MJ of energy per year could be saved in a distributed approach, for the 984 million pounds of HDPE that are recycled in the U.S.
+In fact, using a comparative life cycle assessment in a low density population case study of Michigan (USA), @kreiger2014 argued that about of 100 billion MJ of energy per year could be saved in a distributed approach, for the 984 million pounds of HDPE that are recycled in the U.S.
 There is thus considerable evidence that DRAM can reduce the energy consumption and greenhouse gases of the manufacturing processes.
 
 Most DRAM studies have been using mono-material for the fabrication of feedstock for FFF.
@@ -187,7 +137,7 @@ The addition of rHDPE at higher levels, however, helped to meet the brittle-duct
 
 While former studies have proven been successful in FFF, a new approach to DRAM is fused granular fabrication (FGF) or fused particle fabrication (FPF), where the material-extrusion AM systems print directly from pellets, granules, flakes, shred or grinder material [@fontana2022; @woern2018].
 In the context of recycling, this could reduce the number of melt/extrusion cycles that degrade the material needed in the filament fabrication process [@cruzsanchez2017].
-The FGF technique opens up the potential of use recycle materials as well as print large-scale objects either with a conventional cartesian 3-D printer [@woern2018], delta 3-D printer [@grassi2019] or hangprinter [@petsiuk2022, @rattan2023].
+The FGF technique opens up the potential of use recycle materials as well as print large-scale objects either with a conventional cartesian 3-D printer [@woern2018], delta 3-D printer [@grassi2019] or hangprinter [@petsiuk2022; @rattan2023].
 Research groups corroborate that plastic waste can be used as feedstock materials for FGF/FPF.
 @alexandre2020 assessed the technical and economical dimensions of virgin and shredded PLA printed in a self-modified FGF machine and compared with FFF.
 The investigation showed that the use of FGF reduced printing cost, time and its mechanical performance was comparable with the obtained using the traditional FFF technique.
@@ -196,13 +146,13 @@ Later publications demonstrated the technical and economic feasibility through t
 Few researchers, however, have addressed the problem of the direct printing of recycled multi-materials, which might be a key step forward needed to facilitate the ease of sorting and recycling post-consumer plastic waste materials.
 
 This study explores the potential of direct 3-D printing two immiscible polymers commonly used in the beverage sector through a distributed recycling process for its easily implementation operation at the local level.
-To demonstrate the feasibility of the process, the bottled water plastic most used in France of roughly 90% of PET (body of the bottle) and 10% of HDPE (cap) now called *rPET90//rHDPE10*, is used as a test material.
+To demonstrate the feasibility of the process, the bottle water plastic most used in France of roughly 90% of PET (body of the bottle) and 10% of HDPE (cap) now called *rPET90//rHDPE10*, is used as a test material.
 The experimental process of collection, characterization, and printing of the recycled material is described and the results are discussed in the context of widespread DRAM adoption at the community-based level.
 
 # Materials and Methods
 
 The methodology presented in @fig-1 outlines the approach adopted to develop the study.
-The four stages *Material*, *Material preparation*, *Printing process* and *Evaluation* were thoroughly studied in order to control the major processes steps and the technical characterization methods.
+The three stages *Material obtention*, *Printing process* and *Evaluation* were thoroughly studied in order to control the major processes steps and the technical characterization methods.
 In the following subsections, each step is explained.
 
 ![Global framework of the study](figures/Fig_1_framework.png){#fig-1 width="90%"}
@@ -210,7 +160,7 @@ In the following subsections, each step is explained.
 ## Raw material obtention
 
 The goal of material stage is the collection and preparation of post-consumer plastic source. 
-In this study, bottles of water  coming from the French brand Cristaline was used as a feedstock. 
+In this study, bottles of water  coming from the French brand Cristaline\textsuperscript{\textcopyright} was used as a feedstock. 
 The process steps used are shown in @fig-fig1 a/b.
 Post-consumer bottles were collected by receptacles placed in partnership schools in Lorraine, France.
 To convert the complete water bottles with its cap into 3DP feedstock material, the labels were removed before shredding in a cutting mill Retsch MS300 using a 3 $mm$ grid.
@@ -360,8 +310,6 @@ Both polymeric components of the bottle as well as the blend were characterized 
 
 ### Material particle size analysis (granulometry)
 
-The material after shredding has an irregular shape, which led to machine clogging and generated under-extrusion issues, lowering the quality of the prints.
-Therefore, granulometry evaluation is essential to control these issues.
 Previous studies demonstrated that particles with areas smaller than $22~mm^{2}$ were optimal for print without jamming or under-extrusion problems [@woern2018].
 From the experiments conducted, however, particles with areas above $10~mm^{2}$ clogged in the feeding system and auger screw of the machine.
 Therefore, granulometry analysis was performed using three different mesh sizes.
@@ -397,7 +345,7 @@ These results confirmed the chemical structures of starting materials.
 Additionally, other indicative resonances besides those associated with the polymer structures were not observed, concluding that additives or plasticizers in significative quantities were not present in either sample.
 The spectrum of the printed blend (rPET90//rHDPE10) had the same characteristic peaks as the bottle, confirming the PET dominant content.
 There are, however, observable differences between $1000 ~cm^{-1}$ and $720 ~cm^{-1}$ and in the bond of C-H ($2915~cm^{-1}$ and $2847 ~cm^{-1}$ peaks), confirming the presence of HDPE (cap).
-The shifting observed can be attributed to the hydrogen interactions between both materials.
+The shifting observed can be attributed to interactions between both materials.
 
 ![FTIR spectra of rPET, rHDPE and their blend](figures/Figure_7_FTIR.png){#fig-FTIR width=90%}
 
@@ -405,16 +353,15 @@ The shifting observed can be attributed to the hydrogen interactions between bot
 
 The thermal properties of both recycled materials and their blend were characterized via DSC to have a starting point for the 3-D printing process parameter optimization.
 
-From the representative heating and cooling thermograms shown in Fig.
-5, two distinct endothermic peaks are observed in the printed blend sample that are associated with fusion of the crystalline fractions of rHDPE and rPET, which confirms the immiscibility of both materials.
+From the representative heating and cooling thermograms shown in @fig-DCS, two distinct endothermic peaks are observed in the printed blend sample that are associated with fusion of the crystalline fractions of rHDPE and rPET, which confirms the immiscibility of both materials.
 Moreover, a significant reduction in the enthalpy of fusion and crystallization of the rHDPE in the blend is attributed to the low percentage of HDPE in the blend.
 The observation of cold crystallization peak in the blend but not in the individual polymers, however, can be attributed to an interaction between both polymers, where the rHDPE might act as a nucleating agent.
 Table 2.
 list the thermal properties for rPET, rHDPE and rPET90//rHDPE10.
 The melting point for rHDPE and rPET are 131.7 °C and 249.9 °C, respectively and are similar to those found in the literature [@vaucher2022; @lei2009; @chen2015].
 It is observed that the melting and crystallization temperature of rPET shifted to a higher value, while slightly decreasing for rHDPE.
-In addition, the crystallization of rPET was found to be somewhat affected by the addition of rHDPE as it was increased 4%.
-It is likely the addition of the rHDPE acted as germination point for crystallization [@vaucher2022].
+In addition, the crystallization of rPET was found  be somewhat affected by the addition of rHDPE as it was increased 4%.
+It is likely that the addition of the rHDPE acted as germination point for crystallization [@vaucher2022].
 The slight changes in the rPET temperatures of fusion-crystallization and degree of crystallinity showed the interaction of both polymers.
 
 ::: {#fig-DCS layout-nrow="2"}
@@ -455,7 +402,7 @@ Hence, density was useful to determine the weight of the geometries.
 From calculations made after weight and measuring the rPET90//rHDPE10 injected object, the density of the material was found to be 1.13 $g/cm^{3}$.
 The inclusion of HDPE in the matrix polymer led to a slight decrease in its density, which is a common outcome when a polymer is mixed with a lower density polymer.
 However, if we consider a PET/HDPE blend with a mass ratio of 90/10, the calculated theoretical density is 1.32 $g/cm^{3}$.
-The observed decrease of 14% in the results could be attributed to factors such as experimental conditions and manual measurements
+The observed decrease of 14% in the results could be attributed to factors such as experimental conditions and manual measurements.
 
 ## Particle swarm optimization (PSO) Experimenter
 
@@ -463,7 +410,7 @@ Geometries were 3-D printed changing the parameters as expressed in the PSO Expe
 The fitness function is defined by the weighted sum of the dimensional measurements (length, width, height, and weight) of the printed object, where fitness below 0.1 was set as a desirable threshold.
 In the software five particles were established for one iteration, thus in one iteration five different parameters combinations were printed.
 The first geometry (line) was able to reach a fitness of \< 0.1 after six iterations for a total of thirty lines printed.
-The ideal parameters for this geometry are listed in column two of Table @tbl-table3 and images of the resulting geometries are illustrated in @fig-geometries .
+The ideal parameters for this geometry are listed in column two of  @tbl-table3 and images of the resulting geometries are illustrated in @fig-geometries .
 
 
 ![Images of the resulting geometries a) line, b) plane, c) cube ](figures/Figure_9_geometries.png){#fig-geometries}
@@ -485,7 +432,7 @@ Thus, PSO demonstrated to be an effective and high accuracy prediction technique
 From the results it is observe that the optimal parameters may change depending of the object printed and each parameter has its own variation.
 One hypothesis is that geometry might play a role in parameter assignment and probably could be more visible in larger prints, yet this hypothesis needs further investigation.
 There are several physical mechanisms at play that would be expected to change optimal printing parameters based on the geometry and size of the object.
-For example, the cooling time and temperature history of a voxel will depend on the geometry of the printed object.
+For example, the cooling time and temperature history of a voxel will depend on the geometry of the printed object [@cleeman2022].
 Thus, to maintain the same thermal history the printing parameters must change as the geometry changes.
 This same effect of thermal history can also have more subtle impacts such as degree of crystallization even for PLA [@wijnen2018].
 
@@ -495,8 +442,6 @@ Small changes in contraction as a part cools may cause acceptable distortions fo
 Although, @roschli2019 showed the obstacles and possible solutions of the large-scale AM according to the way of the parts are designed the incidence of the geometry in the printing parameters needs far more detailed future studies.
 Specifically better models for mapping 3-D printing parameter optimizations of small printed objects to large volume objects is needed.
 
-Table 3.
-Ideal printing parameters for fused granule fabrication of waste PET and HDPE blend made from shredded whole plastic water bottles.
 
 ```{r}
 #| label: tbl-table3
@@ -513,23 +458,22 @@ The ideal parameters found for the cube geometry were used as final parameters f
 This change was performed as according to the PSO results the material is printable in a range of 10 to 20 $mm/s$.
 Additionally, the faster the printing the lesser the time of cooling between the layers thus avoiding possible delamination [@roschli2019], which is exacerbated for larger objects.
 
-The Gigabot X successfully produced a piece of furniture from multi-material recycled water bottles that included mixing HDPE and PET as shown in Fig.
-6.a.
+The Gigabot X successfully produced a piece of furniture from multi-material recycled water bottles that included mixing HDPE and PET as shown in @fig-child a.
 
-The printing quality is acceptable as a prototype, proven the machine capacity of printing large-scale functional objects where the chair was able to hold a child with a mass of 20 kg comfortably as shown in Fig.6 f.
-The material, in the other hand, needs further evaluation as the printed object showed weak bond strength between the adjacent layers (delamination Fig. 6.b).This is probably due to the difference in chemical properties of both materials or immiscibility [@chu2022, @william2021], high crystallinity [@verma2023] and the large volume of the object as delamination issues were more visible at the time of print the chair that in the parameters optimization process.
+The printing quality is acceptable as a prototype, proven the machine capacity of printing large-scale functional objects where the chair was able to hold a child with a mass of 20 kg comfortably as shown in @fig-child f.
+The material, in the other hand, needs further evaluation as the printed object showed weak bond strength between the adjacent layers (delamination @fig-child b).This is probably due to the difference in chemical properties of both materials or immiscibility [@chu2022; @william2021], high crystallinity [@verma2023] and the large volume of the object as delamination issues were more visible at the time of print the chair that in the parameters optimization process.
 Indeed, delamination presented in the printing of a larger object can be attributed to the rapid cooling of the layers before the material is once again deposed contrary of the cube printing where the small surface allowing the adhesion of layers before there are completely cooled.
 This can even be an issue for more popular 3-D printing materials like PLA from the print surface [@wijnen2018].
 The addition of agents that reduce the interphase tension between polymers might help to solve the delamination present and enhance the properties of the material [@kramer1994; @dai1997; @inoya2012] as interfacial bond can be enhanced by polymer modification [@gao2021] and viscosity decrement [@ko2019].
-Additionally, while printing warping problems were observed, (Fig. 6.c) which are likely caused by the high crystallization rates of HDPE [@schirmeister2019] suggesting that the incorporation of this plastic even in a low portions have affected the printing negatively.
+Additionally, while printing warping problems were observed, (@fig-child c) which are likely caused by the high crystallization rates of HDPE [@schirmeister2019].
 The use of Magigoo adhesive (Thougth3D Ltd., Paola, Malta) and the addition of a brim was tested in order to enable bed adhesion, yet this solutions did not completely solve the problem.
 A previous study showed that the use of a building plate made of thermoplastic elastomer SEBS allowed the adhesion of the plastic and enables facile detachments of the printing object without breaking or damaging [@schirmeister2019], suggesting a solution that needs further evaluation in future work.
-Another visible issue present in the close angles of the printed object was the shrinkage (Fig. 6.d) which occurs during solidification and especially upon polymer crystallization.
-Moreover, as is well-know, PET has hygroscopic tendencies and easily absorbs atmosphere moisture making it difficult to extrude [@bustosseibert2022 ] thus is likely to break down in the presence of water, lowering the quality of the print.
+Another visible issue present in the close angles of the printed object was the shrinkage (@fig-child d) which occurs during solidification and especially upon polymer crystallization.
+Moreover, as is well-know, PET has hygroscopic tendencies and easily absorbs atmosphere moisture making it difficult to extrude [@bustosseibert2022] thus is likely to break down in the presence of water, lowering the quality of the print.
 Before the chair printing some samples showed brittle behavior and voids formation therefore, the material was constantly dried and the hopper was closed in order to avoid moisture coming from the environment helping to have a more printable material.
-Visually it can be observed some vibration and ringing problems (Fig. 6.e) caused by the machine upgrading, both acceleration and jerk (maximum value of the instantaneous speed change) needs finer tuning.
+Visually it can be observed some vibration and ringing problems (@fig-child e) caused by the machine upgrading, both acceleration and jerk (maximum value of the instantaneous speed change) needs finer tuning.
 
-![Finished children chair and printing issues](figures/Figure6.png)
+![Finished children chair and printing issues](figures/Figure6.png){#fig-child}
 
 ### Cost and environmental impact
 
@@ -542,7 +486,7 @@ When labor costs are not included the price was significative reduced (\~88%) co
 The economics of fabricating the case study product remained competitive even if recycled plastic pellets or shreds are used, which can be found on the market from 1-10 €/kg.
 However, labor, maintenance and machine devaluation were not considered in the final price and are needed in future work for a complete economic evaluation.
 
-Regarding the environmental impact, although this study does not evaluate the entire life cycle of the printed object, various scientific studies have already shown feasibility of distributed recycling [@santander2020; @kerdlap2022], the comparation between conventional and distributed manufacturing in terms of energy consumption and emissions [@Kreiger2013], environmental performance of AM [@garcia2018, @colorado2020a] and the appearance of DRAM as a source of raw material for diverse 3-D printers coming from post-consumer plastic waste in the form of either filament [@hart2018; @pakkanen2017; @mohammed2017a; @mikula2021] or granules [@alexandre2020].
+Regarding the environmental impact, although this study does not evaluate the entire life cycle of the printed object, various scientific studies have already shown feasibility of distributed recycling [@santander2020; @kerdlap2022], the comparation between conventional and distributed manufacturing in terms of energy consumption and emissions [@Kreiger2013], environmental performance of AM [@garcia2018; @colorado2020a] and the appearance of DRAM as a source of raw material for diverse 3-D printers coming from post-consumer plastic waste in the form of either filament [@hart2018; @pakkanen2017; @mohammed2017a; @mikula2021] or granules [@alexandre2020].
 
 Additionally, @caceres-mendoza2023 has developed a complete life of cycle assessment of a DRAM system based on the production of PLA filament comparing virgin and recycled materials.
 Their environmental results showed a reduction of the impacts of production (climate change, fossil depletion, water depletion and potential eutrophication) of \~97% compared to virgin filament.

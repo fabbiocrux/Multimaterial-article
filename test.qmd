@@ -1,23 +1,48 @@
 ---
-title: "Hey!"
-author:
-  - name: Norah Jones
-    affiliation:
-      - id: cmu
-        name: Carnegie Mellon University
-      - id: chicago
-        name: University of Chicago
-  - name: John Hamm
-    affiliation:
-      - ref: cmu
-funding:
-  - source: "NIH (Grant #: 1-R01-MH99999-01A1)"
-    investigator: 
-      - ref: nj      
-format: 
+title: "Multi-material distributed recycling via Fused granular fabrication: rHDPE and rPET case of study"
+
+format:
   pdf:
     documentclass: article
-
-abstract: |
-  The high volume of plastic waste and the extremely low recycling rate has created a serious challenge worldwide. Local distributed recycling coupled to additive manufacturing (DRAM) offers a solution by economically incentivizing local recycling. A new DRAM technology capable of processing large quantities of plastic waste quickly is fused granular fabrication (FGF), where solid shredded plastic waste can be reused directly as 3D printing feedstock. This study presents an experimental assessment of multi-material recycling printability, using two of the most common thermoplastics in the beverage industry polyethylene terephthalate (PET) and high-density polyethylene (HDPE) and the feasibility of mixing PET and HDPE to be used as a feedstock material for large-scale 3-D printing. After the material collection, shredding, and cleaning its characterization, and optimization of parameters for 3D printing was performed. Results showed the feasibility of printing a large object from rPET/rHDPE flakes reducing the production cost up to 88%. .    
+    #classoption: [twocolumn, landscape]
+    lof: true
+    lot: true
 ---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  fig.width=9, fig.height=3.5, fig.retina=3, fig.align = 'center', 
+  out.width = "100%",
+  cache = FALSE,
+  echo = FALSE,
+  message = FALSE, 
+  warning = FALSE,
+  fig.show = TRUE,
+  hiline = TRUE,
+  include = TRUE
+)
+
+library(readxl)
+library(kableExtra)
+library(tidyverse)
+library(flextable)
+set_flextable_defaults(fonts_ignore=TRUE)
+# Link for the Figures
+URL = c('https://raw.githubusercontent.com/fabbiocrux/Figures/main/')
+
+```
+
+\section*{Acronyms}
+
+```{r}
+read_excel("tables/tables.xlsx", sheet="Acronyms") %>%
+   arrange(Acronym) %>% 
+   kable(booktabs = T, linesep = "") %>% 
+   kable_styling(font_size = 10, full_width = F, position = "left") %>% 
+   column_spec(1, bold = T, color = "black")
+```
+
+
+
+# Introduction
