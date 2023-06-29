@@ -2,7 +2,9 @@
 title: "Multi-material distributed recycling via Fused granular fabrication: rHDPE and rPET case of study"
 format:
   pdf:
-    documentclass: article 
+    documentclass: article
+    pdf-engine: latexmk
+    pdf-engine-opt: -xelatex    
     toc: false
     template-partials:
       - title.tex
@@ -27,11 +29,11 @@ author:
     affil-id: 2
   - name: Joshua Pearce
     affil-id: 3
-affiliations: 
+affiliations:
   - id: 1
     name: "Université de Lorraine – ERPI – F-54000, Nancy, France"
   - id: 2
-    name: "Université de Lorraine – LRGP – F-54000, Nancy, France"
+    name: "Université de Lorraine, CNRS, LRGP, F-54000 Nancy, France"
   - id: 3
     name: "Western University, Department of Electrical & Computer Engineering, Canada, London"
 abstract: |
