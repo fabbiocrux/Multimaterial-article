@@ -1,22 +1,25 @@
 ---
 title: "Multi-material distributed recycling via Fused granular fabrication: rHDPE and rPET case of study"
 format:
-  pdf:
-    documentclass: article
-    pdf-engine: latexmk
-    pdf-engine-opt: -xelatex    
-    toc: false
-    template-partials:
-      - title.tex
-    include-in-header:
-      - text: |
-          \usepackage{lineno}
-          \usepackage[noblocks]{authblk}
-          \renewcommand*{\Authsep}{, }
-          \renewcommand*{\Authand}{, }
-          \renewcommand*{\Authands}{, }
-          \renewcommand\Affilfont{\small}
-          \usepackage{setspace}
+  docx:
+    reference-doc: assets/Template.docx
+# format:
+#   pdf:
+#     documentclass: article
+#     pdf-engine: latexmk
+#     pdf-engine-opt: -xelatex    
+#     toc: false
+#     template-partials:
+#       - title.tex
+#     include-in-header:
+#       - text: |
+#           \usepackage{lineno}
+#           \usepackage[noblocks]{authblk}
+#           \renewcommand*{\Authsep}{, }
+#           \renewcommand*{\Authand}{, }
+#           \renewcommand*{\Authands}{, }
+#           \renewcommand\Affilfont{\small}
+#           \usepackage{setspace}
 author:
   - name: Catalina Suescun Gonzalez
     affil-id: 1
