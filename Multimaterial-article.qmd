@@ -509,11 +509,11 @@ In the same way, the development of a methodology that allows the reproducibilit
 # Declaration of competing {.unnumbered}
 
 The authors declare that they have no known competing financial interest or personal relationships that could have appeared to influence the work reported in this paper.
-Acknowledgements
+
 
 # Acknowledgements {.unnumbered}
 
-This project has received funding from the European Union’s Horizon 2020 research and innovation programme under the grant agreement No 869952.
+This project has received funding from the European Union’s Horizon 2020 research and innovation program under the grant agreement No 869952.
 The authors thank the LUE program for the financing of the thesis, the Lorraine Fab Living lab platform and the Thompson endowment.
 
 
