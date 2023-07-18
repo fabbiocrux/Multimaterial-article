@@ -22,7 +22,7 @@ format:
           \usepackage{setspace}
 author:
   - name: Catalina Suescun Gonzalez
-    affil-id: 1,2
+    affil-id: 2
     note: Corresponding author
   - name: Fabio A. Cruz Sanchez
     affil-id: 1    
