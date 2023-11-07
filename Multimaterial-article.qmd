@@ -1,26 +1,27 @@
 ---
 title: "Multi-material distributed recycling via Material Extrusion: rHDPE and rPET case of study"
-format:
- docx:
-   reference-docx: assets/Template.docx
-   #format:
-  #pdf:
-    #documentclass: article
-    #pdf-engine: latexmk
-    #pdf-engine-opt: -xelatex
-    #toc: false
-    #template-partials:
-      #- title.tex
-    #include-in-header:
-     # - text: |
-         # \usepackage{lineno}
-         # \usepackage[noblocks]{authblk}
-          #\renewcommand*{\Authsep}{, }
-          #\renewcommand*{\Authand}{, }
-          #\renewcommand*{\Authands}{, }
-         # \renewcommand\Affilfont{\small}
-         # \usepackage{setspace}
-         # \nolinenumbers
+
+#format:
+ #docx:
+   #reference-docx: assets/Template.docx
+   format:
+    pdf:
+    documentclass: article
+    pdf-engine: latexmk
+    pdf-engine-opt: -xelatex
+    toc: false
+    template-partials:
+      - title.tex
+    include-in-header:
+      - text: |
+          \usepackage{lineno}
+          \usepackage[noblocks]{authblk}
+          \renewcommand*{\Authsep}{, }
+          \renewcommand*{\Authand}{, }
+          \renewcommand*{\Authands}{, }
+          \renewcommand\Affilfont{\small}
+          \usepackage{setspace}
+          \nolinenumbers
 author:
   - name: Catalina Suescun Gonzalez
     affil-id: [1,2,3]
