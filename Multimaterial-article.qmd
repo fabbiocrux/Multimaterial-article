@@ -1,68 +1,65 @@
 ---
 title: "Multi-material distributed recycling via Material Extrusion: rHDPE and rPET case of study"
-format:
- docx:
-   reference-docx: assets/Template.docx
-   #format:
-  #pdf:
-    #documentclass: article
-    #pdf-engine: latexmk
-    #pdf-engine-opt: -xelatex
-    #toc: false
-    #template-partials:
-      #- title.tex
-    #include-in-header:
-     # - text: |
-         # \usepackage{lineno}
-         # \usepackage[noblocks]{authblk}
-          #\renewcommand*{\Authsep}{, }
-          #\renewcommand*{\Authand}{, }
-          #\renewcommand*{\Authands}{, }
-         # \renewcommand\Affilfont{\small}
-         # \usepackage{setspace}
-         # \nolinenumbers
-author:
-  - name: Catalina Suescun Gonzalez
-    affil-id: [1,2,3]
-    note: Corresponding author
-  - name: Fabio A. Cruz Sanchez
-    affil-id: 1    
-  - name: Hakim Boudaoud
-    affil-id: 1
-  - name: Cécile Nouvel
-    affil-id: 2
-  - name: Joshua Pearce
-    affil-id: 3
-affiliations:
-  - id: 1
-    name: "Université de Lorraine – ERPI – F-54000, Nancy, France"
-  - id: 2
-    name: "Université de Lorraine, CNRS, LRGP, F-54000 Nancy, France"
-  - id: 3
-    name: "Western University, Department of Electrical & Computer Engineering, Canada, London"
 abstract: |
  \doublespacing The high volume of plastic waste and the extremely low recycling rate have created a serious challenge worldwide. Local distributed recycling coupled with additive manufacturing (DRAM) offers a solution by economically incentivizing local recycling. One DRAM technology capable of processing large quantities of plastic waste is fused granular fabrication (FGF), where solid shredded plastic waste can be reused directly as 3D printing feedstock. This study presents an experimental assessment of multi-material recycling printability using two of the most common thermoplastics in the beverage industry, polyethylene terephthalate (PET) and high-density polyethylene (HDPE), and the feasibility of mixing PET and HDPE to be used as a feedstock material for large-scale 3-D printing. After the material collection, shredding, and cleaning, the characterization and optimization of parameters for 3D printing were performed. Results showed the feasibility of printing a large object from rPET/rHDPE flakes, reducing the production cost by up to 88%.
 
-keywords: 
-  - Multi-material
-  - Recycling
-  - Waste-based
-  - Fused granular fabrication
-  
-  
+format:
+  docx:
+    toc: false
+    number-sections: false
+    highlight-style: github
+    linkcolor: blue
+    urlcolor: blue
+    link-citations: true
+    reference-doc: assets/Template.docx
+  pdf:
+    documentclass: article
+    geometry:
+      - top=30mm
+      - left=25mm
+      - right=25mm
+      - heightrounded
+    include-in-header:
+      file: assets/packages.tex
+    template-partials:
+      - title.tex 
+
+    author:
+      - name: Catalina Suescun Gonzalez
+        corresponding: true
+        affiliations:
+          - ref: 1
+          - ref: 2
+      - name: Fabio A. Cruz Sanchez
+        affiliations:
+          - ref: 1
+      - name: Hakim Boudaoud
+        affiliations:
+          - ref: 1
+      - name: Cécile Nouvel
+        affiliations:
+          - ref: 2
+      - name: Joshuua Pearce
+        affiliations:
+          - ref: 3
+    affiliations:
+      - id: 1
+        name: Université de Lorraine – ERPI – F-54000, Nancy, France
+      - id: 2
+        name: Université de Lorraine, CNRS, LRGP, F-54000 Nancy, France
+      - id: 3
+        name: Western University, Department of Electrical & Computer Engineering, Canada, London
+# keywords: 
+#   - Multi-material
+#   - Recycling
+#   - Waste-based
+#   - Fused granular fabrication
+#   
 #Highlights:
    #* Using post-consumers plastic waste into feedstock for large-scale 3D printing.
    #* Characterization of the obtained material.
-  # * Printing of a functional object
+   # * Printing of a functional object
    
-   
-linestretch: 1.5
-fontsize: 12pt
-geometry:
-  - top=30mm
-  - left=25mm
-  - right=25mm
-  - heightrounded
 bibliography: [assets/References.bib, assets/Catalina.bib]
 csl: assets/RCR.csl
 number-sections: false
@@ -71,7 +68,8 @@ link-citations: true
 linkcolor: Blue
 urlcolor: Blue
 citecolor: Blue
-prefer-html: true
+#prefer-html: true
+always_allow_html: yes
 ---
 
 
@@ -111,6 +109,7 @@ read_excel("tables/tables.xlsx", sheet="Acronyms") %>%
 
 
 \setstretch{1.5}
+
 # Introduction
 
 \linenumbers 
