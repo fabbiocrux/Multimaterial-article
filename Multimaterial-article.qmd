@@ -1,26 +1,26 @@
 ---
 title: "Multi-material distributed recycling via Material Extrusion: rHDPE and rPET case of study"
-#format:
- # docx:
-   #reference-doc: assets/Template.docx
 format:
-  pdf:
-    documentclass: article
+ docx:
+   reference-docx: assets/Template.docx
+   #format:
+  #pdf:
+    #documentclass: article
     #pdf-engine: latexmk
     #pdf-engine-opt: -xelatex
-    toc: false
-    template-partials:
-      - title.tex
-    include-in-header:
-      - text: |
-          \usepackage{lineno}
-          \usepackage[noblocks]{authblk}
-          \renewcommand*{\Authsep}{, }
-          \renewcommand*{\Authand}{, }
-          \renewcommand*{\Authands}{, }
-          \renewcommand\Affilfont{\small}
-          \usepackage{setspace}
-          \nolinenumbers
+    #toc: false
+    #template-partials:
+      #- title.tex
+    #include-in-header:
+     # - text: |
+         # \usepackage{lineno}
+         # \usepackage[noblocks]{authblk}
+          #\renewcommand*{\Authsep}{, }
+          #\renewcommand*{\Authand}{, }
+          #\renewcommand*{\Authands}{, }
+         # \renewcommand\Affilfont{\small}
+         # \usepackage{setspace}
+         # \nolinenumbers
 author:
   - name: Catalina Suescun Gonzalez
     affil-id: [1,2,3]
@@ -42,11 +42,20 @@ affiliations:
     name: "Western University, Department of Electrical & Computer Engineering, Canada, London"
 abstract: |
  \doublespacing The high volume of plastic waste and the extremely low recycling rate have created a serious challenge worldwide. Local distributed recycling coupled with additive manufacturing (DRAM) offers a solution by economically incentivizing local recycling. One DRAM technology capable of processing large quantities of plastic waste is fused granular fabrication (FGF), where solid shredded plastic waste can be reused directly as 3D printing feedstock. This study presents an experimental assessment of multi-material recycling printability using two of the most common thermoplastics in the beverage industry, polyethylene terephthalate (PET) and high-density polyethylene (HDPE), and the feasibility of mixing PET and HDPE to be used as a feedstock material for large-scale 3-D printing. After the material collection, shredding, and cleaning, the characterization and optimization of parameters for 3D printing were performed. Results showed the feasibility of printing a large object from rPET/rHDPE flakes, reducing the production cost by up to 88%.
+
 keywords: 
   - Multi-material
   - Recycling
   - Waste-based
   - Fused granular fabrication
+  
+  
+#Highlights:
+   #* Using post-consumers plastic waste into feedstock for large-scale 3D printing.
+   #* Characterization of the obtained material.
+  # * Printing of a functional object
+   
+   
 linestretch: 1.5
 fontsize: 12pt
 geometry:
