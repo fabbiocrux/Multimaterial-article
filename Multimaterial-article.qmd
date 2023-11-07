@@ -12,27 +12,27 @@ abstract: |
 #   - Fused granular fabrication
 
 format:
-docx:
-toc: false
-number-sections: false
-highlight-style: github
-linkcolor: blue
-urlcolor: blue
-link-citations: true
-reference-doc: assets/Template.docx
-pdf:
-documentclass: article
-geometry:
-- top=30mm
-- left=25mm
-- right=25mm
-- heightrounded
-include-in-header:
+ docx:
+  toc: false
+  number-sections: false
+  highlight-style: github
+  linkcolor: blue
+  urlcolor: blue
+  link-citations: true
+  reference-doc: assets/Template.docx
+ pdf:
+  documentclass: article
+  geometry:
+   - top=30mm
+   - left=25mm
+   - right=25mm
+   - heightrounded
+  include-in-header:
   file: assets/packages.tex
-template-partials:
-  - title.tex
+ template-partials:
+    - title.tex
 
-    author:
+  author:
    - name: Catalina Suescun Gonzalez
         corresponding: true
         affiliations:
@@ -60,10 +60,10 @@ template-partials:
         name: Western University, Department of Electrical & Computer Engineering, Canada, London
 
    
-Highlights:
-   - Using post-consumers plastic waste into feedstock for large-scale 3D printing.
-   - Characterization of the obtained material.
-   - Printing of a functional object
+# Highlights:
+#    - Using post-consumers plastic waste into feedstock for large-scale 3D printing.
+#    - Characterization of the obtained material.
+#    - Printing of a functional object
    
 bibliography: [assets/References.bib, assets/Catalina.bib]
 csl: assets/RCR.csl
