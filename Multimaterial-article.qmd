@@ -20,24 +20,28 @@ format:
       file: assets/packages.tex
     template-partials:
       - title.tex
-
     author:
       - name: Catalina Suescun Gonzalez
         corresponding: true
-        affiliations:
-          - ref: 1
-          - ref: 2
-          - ref: 3
+        affil-id: 1,2,3
+        # affiliations:
+        #   - ref: 1
+        #   - ref: 2
+        #   - ref: 3
       - name: Fabio A. Cruz Sanchez
-        affiliations:
-          - ref: 1
+        affil-id: 1 
+        # affiliations:
+        #   - ref: 1
       - name: Hakim Boudaoud
-        affiliations:
-          - ref: 1
+        affil-id: 1
+        # affiliations:
+        #   - ref: 1
       - name: Cécile Nouvel
-        affiliations:
-          - ref: 2
+        affil-id: 2
+        # affiliations:
+        #   - ref: 2
       - name: Joshuua Pearce
+        affil-id: 3
         affiliations:
           - ref: 3
     affiliations:
