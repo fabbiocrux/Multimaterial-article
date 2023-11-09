@@ -1,39 +1,28 @@
 ---
 title: "Multi-material distributed recycling via Material Extrusion: rHDPE and rPET case of study"
-
-abstract: |
- \doublespacing The high volume of plastic waste and the extremely low recycling rate have created a serious challenge worldwide. Local distributed recycling coupled with additive manufacturing (DRAM) offers a solution by economically incentivizing local recycling. One DRAM technology capable of processing large quantities of plastic waste is fused granular fabrication (FGF), where solid shredded plastic waste can be reused directly as 3D printing feedstock. This study presents an experimental assessment of multi-material recycling printability using two of the most common thermoplastics in the beverage industry, polyethylene terephthalate (PET) and high-density polyethylene (HDPE), and the feasibility of mixing PET and HDPE to be used as a feedstock material for large-scale 3-D printing. After the material collection, shredding, and cleaning, the characterization and optimization of parameters for 3D printing were performed. Results showed the feasibility of printing a large object from rPET/rHDPE flakes, reducing the production cost by up to 88%.
- 
- 
-# keywords:  |
-#   - Multi-material
-#   - Recycling
-#   - Waste-based
-#   - Fused granular fabrication
-
 format:
- docx:
-  toc: false
-  number-sections: false
-  highlight-style: github
-  linkcolor: blue
-  urlcolor: blue
-  link-citations: true
-  reference-doc: assets/Template.docx
- pdf:
-  documentclass: article
-  geometry:
-   - top=30mm
-   - left=25mm
-   - right=25mm
-   - heightrounded
-  include-in-header:
-  file: assets/packages.tex
- template-partials:
-    - title.tex
+  # docx:
+  #   toc: false
+  #   number-sections: false
+  #   highlight-style: github
+  #   linkcolor: blue
+  #   urlcolor: blue
+  #   link-citations: true
+  #   reference-doc: assets/Template.docx
+  pdf:
+    documentclass: article
+    geometry:
+      - top=30mm
+      - left=25mm
+      - right=25mm
+      - heightrounded
+    include-in-header:
+      file: assets/packages.tex
+    template-partials:
+      - title.tex
 
-  author:
-   - name: Catalina Suescun Gonzalez
+    author:
+      - name: Catalina Suescun Gonzalez
         corresponding: true
         affiliations:
           - ref: 1
@@ -59,14 +48,22 @@ format:
       - id: 3
         name: Western University, Department of Electrical & Computer Engineering, Canada, London
 
-   
-# Highlights:
-#    - Using post-consumers plastic waste into feedstock for large-scale 3D printing.
-#    - Characterization of the obtained material.
-#    - Printing of a functional object
+abstract: |
+ \doublespacing The high volume of plastic waste and the extremely low recycling rate have created a serious challenge worldwide. Local distributed recycling coupled with additive manufacturing (DRAM) offers a solution by economically incentivizing local recycling. One DRAM technology capable of processing large quantities of plastic waste is fused granular fabrication (FGF), where solid shredded plastic waste can be reused directly as 3D printing feedstock. This study presents an experimental assessment of multi-material recycling printability using two of the most common thermoplastics in the beverage industry, polyethylene terephthalate (PET) and high-density polyethylene (HDPE), and the feasibility of mixing PET and HDPE to be used as a feedstock material for large-scale 3-D printing. After the material collection, shredding, and cleaning, the characterization and optimization of parameters for 3D printing were performed. Results showed the feasibility of printing a large object from rPET/rHDPE flakes, reducing the production cost by up to 88%.
+ 
+keywords:  
+  - Multi-material
+  - Recycling
+  - Waste-based
+  - Fused granular fabrication
+
+Highlights:
+    - Using post-consumers plastic waste into feedstock for large-scale 3D printing.
+    - Characterization of the obtained material.
+    - Printing of a functional object
    
 bibliography: [assets/References.bib, assets/Catalina.bib]
-csl: assets/RCR.csl
+csl: assets/ieee.csl
 number-sections: false
 colorlinks: true
 link-citations: true
@@ -473,7 +470,7 @@ the printed object showed weak bond strength between the adjacent layers resulti
 The delamination observed in larger objects can be attributed to the rapid cooling of the layers before the material is once again deposited. This is in contrast to cube printing, where the smaller surface area allows better layer adhesion before complete cooling.
 Even popular 3-D printing materials like PLA can be affected by this issue, as observed from the print surface [@wijnen2018].
  To address the delamination problem and improve material properties, the addition of agents that reduce could be benificial [@kramer1994; @dai1997; @inoya2012]. This can enhance interfacial bonds through polymer modification [@gao2021] and viscosity reduction [@ko2019].
-Additionally,we observed printing warping problems (@fig-child c), which are likely caused by the high crystallization rates of HDPE [@schirmeister2019].
+Additionally,we observed printing warping problems (@fig-child c), which are likely caused by the high crystallization rates of HDPE.
 we tested the use of Magigoo adhesive (Thougth3D Ltd., Paola, Malta) and the addition of a brim to improve bed adhesion, yet these solutions did not completely resolve the problem.
 A previous study showed that the use of a building plate made of thermoplastic elastomer SEBS allowed the adhesion of the plastic and facilitated easy detachment of the printed object without any breakage or damage [@schirmeister2019.This suggests a potencial solution that should be  further evaluated in future work.
 Another visible issue present in the close angles of the printed object was the shrinkage (@fig-child d) which occurs during solidification and particularly upon polymer crystallization.
